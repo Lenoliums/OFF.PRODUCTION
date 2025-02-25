@@ -1,0 +1,61 @@
+:host {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 11;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.navBar-bg {
+    flex: 1;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.61);
+}
+
+.flex {
+    display: flex;
+}
+.gap-0 {
+    gap: 0;
+}
+
+.header-nav-bar {
+    padding-top: 85px;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    max-width: 635px;
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+}
+
+.display-none{
+    display: none;
+}
+
+.navBar-button {
+    padding: 30px 40px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 100%;
+}
+.navBar-button-eng {
+    color: white;
+}
+
+.navBar-button:hover{
+    background-color: white;
+    .navBar-button-eng{
+        display: none;
+    }
+    .navBar-button-ru {
+        display: block;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

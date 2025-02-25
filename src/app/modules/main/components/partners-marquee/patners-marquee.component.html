@@ -1,0 +1,23 @@
+<div class="patners-bg flex-center">
+    ПАРТНЁРЫ
+</div>
+<div class="patners-container">
+    <marquee 
+        *ngFor="let partnersLine of partnersLines; let i=index"
+        [direction]="i%2===0 ? 'left' : 'right'"
+        onmouseout="this.start()"
+        onmouseover="this.stop()"
+    >
+        <ng-container
+            *ngFor="let partner of partnersLine;"
+        >
+            <span 
+                class="partner-span"
+                *ngFor="let partner of partnersLine;"
+            >
+                {{partner}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+
+        </ng-container>
+    </marquee>
+</div>

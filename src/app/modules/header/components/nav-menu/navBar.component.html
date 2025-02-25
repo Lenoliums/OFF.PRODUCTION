@@ -1,0 +1,26 @@
+<div
+    class="header-nav-bar flex gap-0"
+>
+    <div
+        class="navBar-button cursor-pointer"
+        *ngFor="let content of dataService.navButtonsContent"
+        (click)="close.emit(false);"
+        [routerLink] = "content.path"
+    >
+        <div 
+            class="navBar-button-eng"
+        >
+            {{content.enTitle}}
+        </div>
+        <div
+            class="navBar-button-ru display-none"
+        >
+            {{content.ruTitle}}
+    </div>
+    </div>
+</div>
+<div 
+    class="navBar-bg"
+    #navBarBg
+>
+</div>
