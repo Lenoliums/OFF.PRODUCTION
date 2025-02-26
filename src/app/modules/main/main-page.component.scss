@@ -1,3 +1,4 @@
+@import '../../../styles.scss';
 video {
     height: 100vh;
     width: 100%;
@@ -12,15 +13,19 @@ video {
     width: 100%;
 }
 
-.main-case-container {
+.main-content-container {
     z-index: 2;
     position: relative;
     border-radius: 7px;
     height: 2000px;
     width: 80%;
     margin: 0 auto;
-    background-color: white;
+    background-color: $base-color-1;
     margin-top: -30vh;
+
+
+    display: flex;
+    align-items: end;
 }
 
 @keyframes containerExpansion {
@@ -32,7 +37,7 @@ video {
     }
 }
 
-.main-case-container-expansion {
+.main-content-container-expansion {
     animation: containerExpansion auto linear;
     animation-timeline: scroll();
     animation-duration: 1ms;
@@ -43,26 +48,8 @@ video {
     z-index: 2;
     top: 55vh;
     width: 100%;
-    color: white;
     font-weight: 600;
     font-size: 70px;
-    text-shadow: .04em 0 #000, -.04em 0 #000, 0 .04em #000, 0 -.04em #000;
-    -webkit-transition:
-        font-weight 2s,
-        text-shadow 2s,
-        font-size 2s,
-        color 2s,
-        top 2s,
-        left 5s,
-        -webkit-transform 2s;
-    transition:
-        font-weight 2s,
-        text-shadow 2s,
-        font-size 2s,
-        color 2s,
-        top 2s,
-        left 2s,
-        transform 2s;
 }
 .main-logo-container-scrolled{
     font-weight: unset;
@@ -74,4 +61,5 @@ video {
 .main-logo-text{
     margin: auto;
     width: min-content;
+    color: $base-color-1;
 }

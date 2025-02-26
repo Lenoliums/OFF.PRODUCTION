@@ -14,7 +14,7 @@ type Social = {
 @Injectable()
 export class DataSourceService {
 
-    public navButtonsContent: Array<navButtonContent> = [
+    public readonly navButtonsContent: Array<navButtonContent> = [
         {
             enTitle: 'OFF.PRODUCTION',
             ruTitle: 'OFF.PRODUCTION',
@@ -39,32 +39,31 @@ export class DataSourceService {
         },
     ]
 
-    public socials : Array<Social> = [
+    public readonly socials : Array<Social> = [
         {
-            link: 'http://twitter.com/wesbos',
-            description: 'Twitter',
+            link: '',
+            description: 'VK',
         },
         {
-            link: 'http://facebook.com/wesbos.developer',
-            description: 'Facebook',
+            link: '',
+            description: 'Telegram',
         },
         {
-            link: 'http://wesbos.com',
-            description: 'Blog',
-        },
-        {
-            link: 'http://wesbos.com/courses',
-            description: 'Course Catalog',
+            link: '',
+            description: 'YouTube',
         },
     ]
 
-    public partners: Array<string> = [
+    public readonly partners: Array<string> = [
         'Московский Спорт',
         'ФТАР',
         'СберБанк',
         'Яндекс',
         'YOUTA'
     ]
+
+    
+    public readonly phoneNumber: string = "+7 (953) 326-96-62";
 
     constructor() { }
     

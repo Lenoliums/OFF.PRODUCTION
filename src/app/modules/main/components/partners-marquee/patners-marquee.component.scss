@@ -1,17 +1,18 @@
+@import '../../../../../styles.scss';
+
 .patners-bg {
     height: 30vh;
-    color: #b6b6b6;
-    font-size: 150px;
+    color: $base-color-3;
+    font-size: 120px;
     font-weight: 600;
-    letter-spacing: 10px;
     text-transform: lowercase;
 }
 
 .patners-container {
     height: 30vh;
     width: 100%;
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -30vh;
     display: flex;
     flex-direction: column;
     margin-top: 15px;

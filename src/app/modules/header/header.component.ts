@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
 
     protected isNavBarOpen$: BehaviorSubject<boolean> = new BehaviorSubject(false);
     protected isSocialsOpen: boolean = false;
-    protected readonly phoneNumber: string = "+7(999)-999-99-99";
 
     private bgScrollEventListener = () => {};
 
