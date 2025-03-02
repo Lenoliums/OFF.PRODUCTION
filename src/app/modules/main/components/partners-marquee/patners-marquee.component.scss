@@ -3,19 +3,18 @@
 .patners-bg {
     height: 30vh;
     color: $base-color-3;
-    font-size: 120px;
+    font-size: 27vh;
     font-weight: 600;
     text-transform: lowercase;
+    margin-top: 60px;
 }
 
 .patners-container {
     height: 30vh;
     width: 100%;
-    position: relative;
-    top: -30vh;
+    margin-top: -30vh;
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
 
     >* {
         flex: 1;

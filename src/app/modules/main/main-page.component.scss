@@ -17,15 +17,10 @@ video {
     z-index: 2;
     position: relative;
     border-radius: 7px;
-    height: 2000px;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     background-color: $base-color-1;
     margin-top: -30vh;
-
-
-    display: flex;
-    align-items: end;
 }
 
 @keyframes containerExpansion {
@@ -62,4 +57,25 @@ video {
     margin: auto;
     width: min-content;
     color: $base-color-1;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.case-header {
+    font-size: 1.3rem;
+    font-weight: 600;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataSourceService } from 'src/app/services/datasource.service';
+import { TilingComponent } from '../tiling/tiling.component';
 
 
 @Component({
@@ -6,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: 'official-page.component.html',
     styleUrls: ['official-page.component.scss'],
     standalone: true,
+    imports: [TilingComponent],
+    providers: [DataSourceService]
 })
 
 export class OfficialPageComponent implements OnInit {
 
-    constructor() { }
+    constructor(
+        protected dataService: DataSourceService
+    ) { }
 
     ngOnInit() { }
 }

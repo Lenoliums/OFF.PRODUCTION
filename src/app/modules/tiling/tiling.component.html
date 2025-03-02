@@ -1,0 +1,14 @@
+<div class="tiling-container">
+    <div
+        *ngFor="let case of content"
+        class="case-container"
+    >
+        <img 
+            class="cursor-pointer img-container"
+            [src]="case.preview" alt="картиночка"
+        >
+        <div class="tiling-title">{{case.title}}</div>
+        <div class="tiling-partner">{{case.partner}}</div>
+    </div>
+
+</div>
