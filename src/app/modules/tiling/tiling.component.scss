@@ -12,6 +12,9 @@
     margin-bottom: 20px;
     border: 1px $base-color-3 solid;
     border-radius: 10px;
+    @media (max-width: 650px) {
+        width: 100%;
+    }
 }
 
 .cursor-pointer {
@@ -19,9 +22,35 @@
 }
 
 .img-container {
-    width: 100%;
-    aspect-ratio: 14/9;
+    position: relative;
+    background-color: black;
+
+    img {
+        width: 100%;
+        aspect-ratio: 14/9;
+        display: block;
+    }
+    
+    .description-container {
+        color: $base-color-1;
+        position: absolute;
+        padding: 20px;
+        height: 100%;
+        visibility: hidden;
+        font-size: 1rem;
+    }
+     &:hover {
+        .description-container {
+            visibility: visible;
+            z-index: 1;
+        }
+        img {
+            opacity: 0.5;
+            filter: blur(3px);
+        }
+     }
 }
+
 
 .tiling-partner {
     text-align: end;

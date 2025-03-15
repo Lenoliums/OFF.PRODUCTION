@@ -3,10 +3,18 @@
         *ngFor="let case of content"
         class="case-container"
     >
-        <img 
-            class="cursor-pointer img-container"
-            [src]="case.preview" alt="картиночка"
+        <div
+            class="img-container cursor-pointer"
         >
+            <div
+                class="description-container cursor-pointer"
+            >
+                {{case.description}}
+            </div>
+            <img 
+                [src]="case.preview" alt="картиночка"
+            >
+        </div>
         <div class="tiling-title">{{case.title}}</div>
         <div class="tiling-partner">{{case.partner}}</div>
     </div>

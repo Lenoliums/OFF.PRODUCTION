@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, EventEmitter, Output, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, OnDestroy, Output, Renderer2, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataSourceService } from 'src/app/services/datasource.service';
 
@@ -12,7 +12,7 @@ import { DataSourceService } from 'src/app/services/datasource.service';
     providers: [DataSourceService]
 })
 
-export class NavBarComponent {
+export class NavBarComponent implements AfterViewInit, OnDestroy{
 
     @ViewChild('navBarBg', {read: ElementRef}) navBarBg?:ElementRef<HTMLDivElement>;
 

@@ -1,0 +1,41 @@
+<div class="base-color-1">MAIN/breadcrumb в работе</div>
+<form 
+    class="order-container"
+    [formGroup]="orderForm"
+>
+    <input
+        name="phone"
+        formControlName="phone"
+        prefix="+7 "
+        [showMaskTyped]= true
+        mask="(000)000-00-00"
+    />
+    <div 
+        [ngClass]='{"visible":orderForm.controls["phone"].errors && orderForm.controls["phone"].touched}'
+        class="form-alert"
+    >   
+    <ng-container 
+        *ngIf="orderForm.controls['phone'].errors && orderForm.controls['phone'].errors['required'];else formatError"
+    >
+    
+        Укажите телефонный номер
+    </ng-container>
+    <ng-template #formatError>
+        Неверный формат
+    </ng-template>
+        
+        
+    </div>
+    <input 
+        placeholder="Имя"
+        name="name" 
+        formControlName="name"
+    />
+    <div 
+        [ngClass]='{"visible":orderForm.controls["name"].invalid && orderForm.controls["name"].touched}'
+        class="form-alert"
+    >
+        Укажите своё имя
+    </div>
+    <button [disabled]="orderForm.invalid" class="cursor-pointer">Отправить </button>
+</form>

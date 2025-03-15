@@ -186,6 +186,9 @@ body {
 
 html {
     font-size: 16px;
+    @media (max-width: 950px) {
+        font-size: 14px;
+    }
 }
 
 a {
@@ -195,7 +198,21 @@ a {
 $base-color-1: #ffffff;
 $base-color-2: #000000;
 $base-color-3: #b6b6b6;
+$error-color: #ff0000;
 
+.error-color {
+    color: $error-color;
+}
+.base-color-1 {
+    color: $base-color-1;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+input {
+    cursor: auto;
+}
 // body{
 // 	font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
 // }

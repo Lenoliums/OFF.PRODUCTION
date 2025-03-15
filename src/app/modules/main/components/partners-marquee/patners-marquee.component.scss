@@ -3,10 +3,12 @@
 .patners-bg {
     height: 30vh;
     color: $base-color-3;
-    font-size: 27vh;
+    font-size: 14vw;
     font-weight: 600;
     text-transform: lowercase;
     margin-top: 60px;
+    text-wrap: nowrap;
+
 }
 
 .patners-container {
@@ -24,4 +26,5 @@
 .partner-span {
     line-height: 60px;
     font-size: 20px;
+    font-weight: bold;
 }

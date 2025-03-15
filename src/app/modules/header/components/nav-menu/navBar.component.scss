@@ -24,6 +24,9 @@
 
 .header-nav-bar {
     padding-top: 85px;
+    @media (max-width: 950px) {
+        padding-top: 65px;
+    }
     background-color: $base-color-2;
     position: absolute;
     width: 100%;

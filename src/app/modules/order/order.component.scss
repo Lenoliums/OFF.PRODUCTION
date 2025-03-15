@@ -1,0 +1,76 @@
+@import '../../../styles.scss';
+
+:host {
+    * {
+        background-color: $base-color-2;
+    }
+    display: block;
+    height: calc(100vh - 85px);
+    @media (max-width: 950px) {
+        height: calc(100vh - 65px);
+    }
+    background-color: $base-color-2;
+}
+
+.order-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 25px;
+    input {
+        margin-top: 20px;
+        padding: 5px 10px;
+        display: block;
+        width: 100%;
+        border: 0;
+        outline: 0;
+        color: $base-color-3;
+        border-bottom: 1px solid $base-color-3;
+        font-size: 1.5rem;
+
+        &:focus-visible {
+            border-color: $base-color-1;
+            color: $base-color-1;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:focus {
+          transition: background-color 0s 600000s, color 0s 600000s !important;
+        }
+        &.ng-touched.ng-invalid {
+            border-color: $error-color;
+        }
+
+        
+    }
+
+    .form-alert {
+        color: $error-color;
+        visibility: hidden;
+    }
+
+    button {
+        display: block;
+        margin: 10px auto;
+        border: 1px solid $base-color-1;
+        color: $base-color-1;
+        padding: 10px 30px;
+        &:hover {
+            background-color: $base-color-1;
+            color: $base-color-2;
+        }
+        &:disabled {
+            color: $base-color-3;
+            border-color: $base-color-3;
+            background-color: $base-color-2;
+        }
+        &:active {
+            background-color: $base-color-3;
+        }
+        font-size: 1rem;
+    }
+
+    .visible {
+        visibility: visible;
+    }
+}

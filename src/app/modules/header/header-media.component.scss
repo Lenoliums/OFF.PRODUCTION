@@ -1,0 +1,29 @@
+@media (max-width: 950px) {
+    .header-button {
+        height: 45px;
+    }
+    .header-cirkle {
+        width: 45px;
+    }
+    .header-telephone {
+        display: none;
+    }
+    .header-container {
+        padding: 8px 20px;
+    }
+    .h-85 {
+        height: 65px;
+    }
+    .hamburger-icon {
+        margin: 15px;
+    }
+    .mediaContainer, .media-popap{
+        width: 75px;
+    }
+}
+
+@media (max-width: 650px) {
+    .header-logo {
+        display: none;
+    }
+}

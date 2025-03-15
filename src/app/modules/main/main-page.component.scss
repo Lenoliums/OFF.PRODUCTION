@@ -7,6 +7,10 @@ video {
     object-fit: cover;
     z-index: 1;
     margin-top: -85px;
+    @media (max-width: 950px) {
+        margin-top: -65px;
+    }
+
 }
 
 .main-container {
@@ -44,7 +48,11 @@ video {
     top: 55vh;
     width: 100%;
     font-weight: 600;
-    font-size: 70px;
+    font-size: 4.35rem;
+    @media (max-width: 650px) {
+        font-size: 3rem;
+        top: 60vh;
+    }
 }
 .main-logo-container-scrolled{
     font-weight: unset;
