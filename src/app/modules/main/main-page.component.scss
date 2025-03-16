@@ -20,7 +20,7 @@ video {
 .main-content-container {
     z-index: 2;
     position: relative;
-    border-radius: 7px;
+    border-radius: 7px 7px 0 0;
     width: 90%;
     margin: 0 auto;
     background-color: $base-color-1;

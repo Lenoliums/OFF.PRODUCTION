@@ -1,23 +1,23 @@
-<div class="patners-bg flex-center">
+<div class="patners-bg">
     нас выбирают
 </div>
 <div class="patners-container">
-    <marquee 
+    <marquee
         *ngFor="let partnersLine of partnersLines; let i=index"
         [direction]="i%2===0 ? 'left' : 'right'"
         onmouseout="this.start()"
         onmouseover="this.stop()"
+        height="33%"
     >
-        <ng-container
-            *ngFor="let partner of partnersLine;"
-        >
+    <ng-container
+        *ngFor="let partner of partnersLine;"
+    >
             <span 
                 class="partner-span"
                 *ngFor="let partner of partnersLine;"
             >
                 {{partner}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
-
         </ng-container>
     </marquee>
 </div>

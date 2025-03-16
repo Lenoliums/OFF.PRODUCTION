@@ -1,30 +1,33 @@
 @import '../../../../../styles.scss';
 
+:host {
+    margin-top: 60px;
+    @media (max-width: 650px) {
+        margin-top: 20px;
+    }
+}
+
 .patners-bg {
-    height: 30vh;
+    text-align: center;
     color: $base-color-3;
     font-size: 14vw;
     font-weight: 600;
     text-transform: lowercase;
-    margin-top: 60px;
     text-wrap: nowrap;
-
 }
 
 .patners-container {
-    height: 30vh;
     width: 100%;
-    margin-top: -30vh;
-    display: flex;
-    flex-direction: column;
-
-    >* {
-        flex: 1;
+    height: 14vw;
+    position: absolute;
+    margin-top: -14vw;
+    marquee {
+        display: block;
+        height: 33%;
     }
 }
 
 .partner-span {
-    line-height: 60px;
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: bold;
 }
