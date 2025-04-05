@@ -29,5 +29,7 @@
 
 .partner-span {
     font-size: 1rem;
-    font-weight: bold;
+    @media (min-width: 650px) {
+        font-weight: bold;
+    }
 }

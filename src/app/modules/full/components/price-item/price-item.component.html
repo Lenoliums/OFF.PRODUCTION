@@ -1,0 +1,77 @@
+<div class="price-container" *ngIf="fullCart">
+  <div class="price-headerContainer">
+    <div class="price-header">
+      {{ fullCart.name }}
+    </div>
+    <div>
+      Бюджет:
+      <span class="price-amount"> от {{ fullCart.price }} </span>
+    </div>
+    <div
+      class="price-button"
+      routerLink="/order"
+      [queryParams]="{
+        prop: choosenProps()
+      }"
+    >
+      Заказать
+    </div>
+  </div>
+  <div class="price-optionsContainer">
+    <ng-container
+      *ngTemplateOutlet="
+        optionBlock;
+        context: { $implicit: fullCart.preProduction }
+      "
+    ></ng-container>
+    <ng-container
+      *ngTemplateOutlet="
+        optionBlock;
+        context: { $implicit: fullCart.production }
+      "
+    ></ng-container>
+    <ng-container
+      *ngTemplateOutlet="
+        optionBlock;
+        context: { $implicit: fullCart.postProduction }
+      "
+    ></ng-container>
+  </div>
+</div>
+
+<ng-template class="cross" #cross>&#10006;</ng-template>
+
+<ng-template #optionBlock let-optionBlock>
+  <div class="price-optionHeader">{{ optionBlock.optionsName }}:</div>
+  <div
+    class="price-optionContainer"
+    *ngIf="!(isOptional | async); else optionalBlock"
+  >
+    <div
+      *ngFor="let option of optionBlock.allOptions"
+      [ngClass]="{ isChosen: optionBlock.options.has(option) }"
+    >
+      <ng-container>
+        <span class="tick" *ngIf="optionBlock.options.has(option); else cross"
+          >&#10004;</span
+        >
+      </ng-container>
+      {{ option }}
+    </div>
+  </div>
+  <ng-template #optionalBlock>
+    <div class="price-optionContainer">
+      <label
+        class="cursor-pointer"
+        *ngFor="let option of optionBlock.allOptions"
+        [ngClass]="{ isChosen: choosenOptions.has(option) }"
+        ><input
+          class="price-checkbox"
+          type="checkbox"
+          [name]="option"
+          (click)="clickCheckBox(option)"
+        />{{ option }}</label
+      >
+    </div>
+  </ng-template>
+</ng-template>

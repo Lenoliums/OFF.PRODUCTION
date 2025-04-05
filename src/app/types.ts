@@ -1,20 +1,80 @@
-
 type navButtonContent = {
-    enTitle: string,
-    ruTitle: string,
-    path?: string
-}
+  enTitle: string;
+  ruTitle: string;
+  path?: string;
+};
 
 type Social = {
-    link: string,
-    description: string
-}
+  link: string;
+  description: string;
+};
 
 type TilingContent = {
-    title: string,
-    video: string,
-    description?: string,
-    partner: string,
-    preview: string,
+  title: string;
+  video: string;
+  description?: string;
+  partner: string;
+  preview: string;
+};
+
+type OptionsNames = 'Предпродакшн' | 'Продакшн' | 'Постпродакшн';
+type PreProductionItems =
+  | 'Сценарий'
+  | 'Раскадровка'
+  | 'Креатив'
+  | 'Режиссерский сценарий'
+  | 'Скаутинг локаций';
+
+type ProductionItems =
+  | 'Сокращенная команда'
+  | 'Упрощенное оборудование'
+  | 'Актеры'
+  | 'Гример'
+  | 'Костюмер';
+
+type PostProductionItems =
+  | 'Монтаж'
+  | 'Инфографика'
+  | 'Саунд дизайн'
+  | '2Д графика'
+  | '3Д графика'
+  | 'Создание музыки';
+
+interface PreProductionItem {
+  optionsName: OptionsNames;
+  options: Set<PreProductionItems>;
+  allOptions: Array<PreProductionItems>;
 }
-export { navButtonContent, Social, TilingContent };
+
+interface ProductionItem {
+  optionsName: OptionsNames;
+  options: Set<ProductionItems>;
+  allOptions: Array<ProductionItems>;
+}
+
+interface PostProductionItem {
+  optionsName: OptionsNames;
+  options: Set<PostProductionItems>;
+  allOptions: Array<PostProductionItems>;
+}
+
+type fullCart = {
+  name: string;
+  price: number;
+  preProduction: PreProductionItem;
+  production: ProductionItem;
+  postProduction: PostProductionItem;
+};
+
+export {
+  navButtonContent,
+  Social,
+  TilingContent,
+  fullCart,
+  PreProductionItems,
+  ProductionItems,
+  PostProductionItems,
+  PreProductionItem,
+  ProductionItem,
+  PostProductionItem,
+};

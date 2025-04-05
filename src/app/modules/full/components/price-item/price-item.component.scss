@@ -1,0 +1,97 @@
+@import "../../../../../styles.scss";
+:host {
+  display: flex;
+  flex: 1 0 auto;
+  height: 100%;
+  background-color: transparent;
+  margin: auto;
+  max-width: 400px;
+}
+.price-container {
+  border-radius: 20px;
+  background-color: $base-color-1;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-optionsContainer {
+  background-color: #efefef;
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: 10px;
+  flex: 1 0;
+}
+
+.price-optionContainer {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 10px;
+  * {
+    color: $base-color-3;
+    .cross {
+      color: $base-color-3;
+    }
+    .tick {
+      color: $base-color-2;
+    }
+
+    &.isChosen {
+      color: $base-color-2;
+      * {
+        color: $base-color-2;
+      }
+    }
+  }
+}
+
+.price-headerContainer {
+  padding: 10px 20px;
+  font-size: 1.4rem;
+}
+
+.price-optionHeader {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+div:has(> .price-amount) {
+  font-size: 1.2rem;
+}
+.price-amount {
+  font-size: 2rem;
+}
+.price-button {
+  border-radius: 12px;
+  border: 3px solid #efefef;
+  color: $base-color-3;
+  margin: 15px auto 5px;
+  width: 80%;
+  text-align: center;
+  max-width: 275px;
+  padding: 3px;
+  cursor: pointer;
+}
+.price-button:hover {
+  color: $base-color-2;
+  border-color: $base-color-2;
+}
+.price-header {
+  margin-bottom: 5px;
+}
+.price-checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  width: 5px;
+  outline: 1px solid $base-color-3;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.price-checkbox:checked {
+  outline-offset: 1px;
+  height: 5px;
+  width: 5px;
+  outline-color: $base-color-2;
+  background-color: $base-color-2;
+}
