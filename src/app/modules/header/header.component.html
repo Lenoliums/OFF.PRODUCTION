@@ -1,68 +1,91 @@
-
-<div class="header-container flex space-between h-85">
-    <div class="bgRect" #bgRect></div>
+<div class="header-container h-85">
+  <div class="bgRect" #bgRect></div>
+  <div class="flex space-between align-items-start">
     <div class="flex gap-30 align-items-center">
-        <div 
-            class="header-button header-cirkle navBarOpen-button cursor-pointer"
-            (click)="isNavBarOpen$.next(!isNavBarOpen$.value)"
+      <div
+        class="header-button header-cirkle navBarOpen-button cursor-pointer"
+        (click)="isNavBarOpen$.next(!isNavBarOpen$.value)"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          [ngClass]="{ 'cross-icon': (isNavBarOpen$ | async) }"
+          class="hamburger-icon cursor-pointer"
+          width="44"
+          height="44"
+          viewBox="0 0 48 48"
         >
-            <svg xmlns="http://www.w3.org/2000/svg" 
-                [ngClass]="{'cross-icon' : (isNavBarOpen$|async)}"
-                class="hamburger-icon cursor-pointer" width="44" height="44" viewBox="0 0 48 48">
-                <rect class="top cursor-pointer" x="0" y="0" rx="4" ry="4" width="100%" height="8" />
-                <rect class="middle cursor-pointer" x="0" y="20" rx="4" ry="4" width="100%" height="8" />
-                <rect class="bottom cursor-pointer" x="0" y="40" rx="4" ry="4" width="100%" height="8" />
-            </svg>
-        </div>
-        <div class="header-logo">OFF.PRODUCTION</div>
+          <rect
+            class="top cursor-pointer"
+            x="0"
+            y="0"
+            rx="4"
+            ry="4"
+            width="100%"
+            height="8"
+          />
+          <rect
+            class="middle cursor-pointer"
+            x="0"
+            y="20"
+            rx="4"
+            ry="4"
+            width="100%"
+            height="8"
+          />
+          <rect
+            class="bottom cursor-pointer"
+            x="0"
+            y="40"
+            rx="4"
+            ry="4"
+            width="100%"
+            height="8"
+          />
+        </svg>
+      </div>
+      <div class="header-logo">OFF.PRODUCTION</div>
     </div>
 
-    <div class="flex-center gap-20">
-        <a 
-            class="header-button cursor-pointer header-telephone"
-            [href]="'tel:' + dataService.phoneNumber"
+    <div class="flex-center align-items-start gap-20">
+      <a
+        class="header-button cursor-pointer header-telephone"
+        [href]="'tel:' + dataService.phoneNumber"
+      >
+        {{ dataService.phoneNumber }}
+      </a>
+      <div class="header-button cursor-pointer" routerLink="order">
+        СВЯЗАТЬСЯ С НАМИ
+      </div>
+      <div #mediaContainer class="mediaContainer">
+        <div
+          (mouseover)="openSocials()"
+          class="header-button header-cirkle media-button"
         >
-            {{dataService.phoneNumber}}
-        </a>
-        <div class="header-button cursor-pointer"
-            routerLink = "order"
-        >
-            СВЯЗАТЬСЯ С НАМИ
+          <span
+            class="media-button-text"
+            [ngClass]="{ 'rotate-45': isSocialsOpen }"
+          >
+            social
+            <br />
+            media
+          </span>
         </div>
-        <div 
-            #mediaContainer
-            class="mediaContainer"
-        >
-            <div 
-                (mouseover)="openSocials()"
-                class="header-button header-cirkle media-button">
-                <span 
-                    class="media-button-text"
-                    [ngClass]="{'rotate-45': isSocialsOpen}"
-                >
-                    social 
-                    <br/> 
-                    media
-                </span>
-            </div>
-            <div 
-            [ngClass]="{'display-none': !isSocialsOpen}"
-            class="media-popap"
+        <div [ngClass]="{ 'display-none': !isSocialsOpen }" class="media-popap">
+          <div class="media-container flex gap-0">
+            <a
+              class="social cursor-pointer"
+              *ngFor="let social of dataService.socials"
+              [href]="social.link"
             >
-                <div class="media-container flex gap-0">
-                    <a 
-                        class="social cursor-pointer"
-                        *ngFor="let social of dataService.socials"
-                        [href]="social.link"
-                    >
-                    {{social.description}}
-                    </a>
-                </div>
-             </div>
+              {{ social.description }}
+            </a>
+          </div>
         </div>
+      </div>
     </div>
     <navBar
-        *ngIf="(isNavBarOpen$ | async) as isNavBarOpen"
-        (close)="isNavBarOpen$.next(false)"
+      *ngIf="isNavBarOpen$ | async as isNavBarOpen"
+      (close)="isNavBarOpen$.next(false)"
     ></navBar>
+  </div>
 </div>

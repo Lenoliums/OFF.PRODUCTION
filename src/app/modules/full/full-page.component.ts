@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 export class FullPageComponent implements OnInit {
   protected readonly customOptions: OwlOptions = {
     loop: true,
-    mouseDrag: true,
+    mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
     dots: false,

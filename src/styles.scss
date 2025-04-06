@@ -225,3 +225,7 @@ input {
 // h1{
 //    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
 // }
+@mixin section() {
+  max-width: 1440px;
+  margin: 0 auto;
+}

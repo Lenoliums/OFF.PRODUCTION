@@ -1,77 +1,106 @@
-@import '../../../../../styles.scss';
+@import "../../../../../styles.scss";
 :host {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 11;
-    height: 100vh;
-    width: 100%;
-    display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 11;
+  height: 100vh;
+  width: 100%;
+  display: flex;
 }
 
 .navBar-bg {
-    flex: 1;
-    height: 100vh;
-    background-color: rgba($base-color-2, 0.61);
+  flex: 1;
+  height: 100vh;
+  background-color: rgba($base-color-2, 0.61);
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 .gap-0 {
-    gap: 0;
+  gap: 0;
 }
 
 .header-nav-bar {
-    padding-top: 85px;
-    -webkit-animation: animateWidth 1s ease-out;
-    @media (max-width: 950px) {
-        padding-top: 65px;
-        -webkit-animation: none;
-    }
-    background-color: $base-color-2;
-    position: absolute;
-    height: 100vh;
-    flex-direction: column;
-    display: flex;
-    max-width: 635px;
-    width: 100%;
+  padding-top: 85px;
+  -webkit-animation: animateWidth 1s ease-out;
+  @media (max-width: 950px) {
+    padding-top: 65px;
+    -webkit-animation: none;
+  }
+  background-color: $base-color-2;
+  position: absolute;
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  max-width: 635px;
+  width: 100%;
+  position: relative;
 }
 
 @keyframes animateWidth {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
-.display-none{
-    display: none;
+.display-none {
+  display: none;
 }
 
 .navBar-button {
-    padding: 30px 40px;
-    border-top: 1px solid $base-color-1;
-    border-bottom: 1px solid $base-color-1;
-    width: 100%;
-
+  padding: 30px 40px;
+  border-top: 1px solid $base-color-1;
+  border-bottom: 1px solid $base-color-1;
+  width: 100%;
 }
 .navBar-button-eng {
-    color: $base-color-1;
+  color: $base-color-1;
 }
 
-.navBar-button:hover{
-    background-color: $base-color-1;
-    .navBar-button-eng{
-        display: none;
-    }
-    .navBar-button-ru {
-        display: block;
-    }
+.navBar-button:hover {
+  background-color: $base-color-1;
+  .navBar-button-eng {
+    display: none;
+  }
+  .navBar-button-ru {
+    display: block;
+  }
 }
 
 .cursor-pointer {
+  cursor: pointer;
+}
+.navBar-socialContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  @media (max-width: 950px) {
+    top: 7px;
+  }
+
+  img {
+    width: 48px;
+    height: 48px;
     cursor: pointer;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+  }
+  img:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+  }
+  #youtube {
+    width: 42px;
+    height: 42px;
+    margin-left: 2px;
+  }
 }

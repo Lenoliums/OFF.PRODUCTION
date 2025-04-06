@@ -1,34 +1,24 @@
-<video id="video" #video 
-    [autoplay]="true" 
-    [muted]="true" 
-    [loop]="true"
-    src = "./assets/showreel_loop.mp4"
->
-</video>
+<video
+  id="video"
+  #video
+  [autoplay]="true"
+  [muted]="true"
+  [loop]="true"
+  src="./assets/showreel_loop.mp4"
+></video>
 <div class="main-container">
-    <div 
-        #logo
-        class="main-logo-container"
-    >
-        <div class="main-logo-text">
-            OFF.PRODUCTION
-        </div>
+  <div #logo class="main-logo-container">
+    <div class="main-logo-text">OFF.PRODUCTION</div>
+  </div>
+  <div class="main-content-container main-content-container-expansion">
+    <div class="flex space-between p-20 section">
+      <div class="case-header">кейсы</div>
+      <div class="cursor-pointer" routerLink="official">Смотреть портфолио</div>
     </div>
-    <div class="main-content-container main-content-container-expansion">
-        <div class="flex space-between p-20">
-            <div class="case-header">
-                кейсы
-            </div>
-            <div
-                class="cursor-pointer"
-                routerLink = "official"
-            >
-                Смотреть портфолио
-            </div>
-        </div>
-        <tiling 
-            [content]="dataService.portfolio.slice(0, 4)"
-        ></tiling>
-        <patners-marquee></patners-marquee>
-    </div>
+    <tiling
+      class="section"
+      [content]="dataService.portfolio.slice(0, 4)"
+    ></tiling>
+    <patners-marquee></patners-marquee>
+  </div>
 </div>

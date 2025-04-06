@@ -1,162 +1,161 @@
-@import '../../../styles.scss';
+@import "../../../styles.scss";
 
 .header-container {
-    width: 100%;
-    padding: 12px 40px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-
-
+  width: 100%;
+  padding: 12px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.section {
+  @include section();
+}
+.align-items-start {
+  align-items: flex-start !important;
 }
 .bgRect {
-    width: 100%;
-    height: 0;
-    background-color: $base-color-2;
-    transition: height 0.5s ease-out;
-    -webkit-transition: height 0.5s ease-out;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 9;
+  width: 100%;
+  height: 0;
+  background-color: $base-color-2;
+  transition: height 0.5s ease-out;
+  -webkit-transition: height 0.5s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
 }
-@mixin flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .h-85 {
-   height: 85px;
+  height: 85px;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
-.space-between{
-    justify-content: space-between;
+.space-between {
+  justify-content: space-between;
 }
-.justify-content-center{
-    justify-content: center;
+.justify-content-center {
+  justify-content: center;
 }
 .gap-20 {
-    gap: 20px
+  gap: 20px;
 }
 .gap-0 {
-    gap: 0;
+  gap: 0;
 }
-.gap-30{
-    gap: 30px
+.gap-30 {
+  gap: 30px;
 }
 .flex-center {
-    @include flex-center;
+  @include flex-center;
 }
-.header-button{
-    @include flex-center;
-    background-color: $base-color-1;
-    height: 60px;
-    border-radius: 13px;
-    text-align: center;
-    vertical-align: middle;
-    padding: 10px 25px;
-    flex: 1;
-    max-width: 230px;
-    z-index: 10;
-    font-size: 1rem;
-    text-wrap: nowrap;
+.header-button {
+  @include flex-center;
+  background-color: $base-color-1;
+  height: 60px;
+  border-radius: 13px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 25px;
+  flex: 1;
+  max-width: 230px;
+  z-index: 10;
+  font-size: 1rem;
+  text-wrap: nowrap;
 
-    &:hover {
-        background-color: $base-color-3;
-    }
+  &:hover {
+    background-color: $base-color-3;
+  }
 }
-.media-button-text{
-    display: inline-block;
-    -webkit-transition:
-        rotate 0.2s linear;
-    transition:
-        rotate 0.2s linear;
+.media-button-text {
+  display: inline-block;
+  -webkit-transition: rotate 0.2s linear;
+  transition: rotate 0.2s linear;
 }
 .media-button {
-    margin: 0 auto;
+  margin: 0 auto;
 }
-.mediaContainer{
-    align-self: flex-start;
-    height: max-content;
-    width: 90px;
-
+.mediaContainer {
+  height: max-content;
+  width: 90px;
 }
 .header-cirkle {
-    width: 60px;
-    border-radius: 100%;
-    padding: 0;
-    flex: 0
+  width: 60px;
+  border-radius: 100%;
+  padding: 0;
+  flex: 0;
 }
 
-.display-none{
-    display: none;
+.display-none {
+  display: none;
 }
 
 .cursor-pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
-.media-popap{
-    position: relative;
-    top: 10px;
-    width: 90px;
+.media-popap {
+  position: relative;
+  top: 10px;
+  width: 90px;
 }
-.media-container{
-    padding: 10px;
-    flex-direction: column;
-    border-radius: 13px;
-    background-color: $base-color-3;
+.media-container {
+  padding: 10px;
+  flex-direction: column;
+  border-radius: 13px;
+  background-color: $base-color-3;
 }
 
 .rotate-45 {
-    rotate: -45deg;
+  rotate: -45deg;
 }
 .align-items-center {
-    align-items: center;
+  align-items: center;
 }
 .header-logo {
-    font-size: 1.5rem;
-    color: $base-color-1;
-    z-index: 11;
+  font-size: 1.5rem;
+  color: $base-color-1;
+  z-index: 11;
 }
 .navBarOpen-button {
-    z-index: 12;
+  z-index: 12;
 }
 
 .mediaContainer {
-    z-index: 10;
+  z-index: 10;
 }
 .hamburger-icon {
-    margin: 20px;
+  margin: 20px;
 }
 .hamburger-icon rect {
-    transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .cross-icon {
-    .top,.bottom {
-        transform-origin: center;
-    }
-    .top {
-        transform: rotate(45deg)
-          translate(0, 20px);
-    }
-    .bottom {
-        transform: rotate(-45deg)
-          translate(0, -20px);
-    }
-    .middle {
-        opacity: 0;
-    }
+  .top,
+  .bottom {
+    transform-origin: center;
+  }
+  .top {
+    transform: rotate(45deg) translate(0, 20px);
+  }
+  .bottom {
+    transform: rotate(-45deg) translate(0, -20px);
+  }
+  .middle {
+    opacity: 0;
+  }
 }
-  
+
 .hamburger-icon:hover rect {
-    fill: var(--icon-active-color);
+  fill: var(--icon-active-color);
 }
 
 .social {
-    padding: 2.5px 0;
-    border-bottom: 1px $base-color-2 solid;
+  padding: 2.5px 0;
+  border-bottom: 1px $base-color-2 solid;
 }
