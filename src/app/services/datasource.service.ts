@@ -7,6 +7,7 @@ import {
   ProductionItems,
   Social,
   TilingContent,
+  Partners,
 } from '../types';
 @Injectable()
 export class DataSourceService {
@@ -40,23 +41,41 @@ export class DataSourceService {
     {
       link: '',
       description: 'VK',
+      imgPath: './assets/icons/vk.svg',
     },
     {
       link: '',
       description: 'Telegram',
+      imgPath: './assets/icons/tg.svg',
     },
     {
       link: '',
       description: 'YouTube',
+      imgPath: './assets/icons/youtube.svg',
     },
   ];
 
-  public readonly partners: Array<string> = [
-    'Московский Спорт',
-    'ФТАР',
-    'СберБанк',
-    'Яндекс',
-    'YOUTA',
+  public readonly partners: Array<Partners> = [
+    {
+      title: 'Московский Спорт',
+      marqueeImg: './assets/partners/московский_спорт.png',
+    },
+    {
+      title: 'ФТАР',
+      marqueeImg: './assets/partners/фтар.png',
+    },
+    {
+      title: 'СберБанк',
+      marqueeImg: './assets/partners/сбер.png',
+    },
+    {
+      title: 'Яндекс',
+      marqueeImg: './assets/partners/яндекс.png',
+    },
+    {
+      title: 'YOUTA',
+      marqueeImg: './assets/partners/йота.png',
+    },
   ];
 
   public readonly phoneNumber: string = '+7 (953) 326-96-62';

@@ -10,29 +10,25 @@ import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { NavBarComponent } from './components/nav-menu/navBar.component';
 import { BehaviorSubject, filter, first, map } from 'rxjs';
 import { DataSourceService } from 'src/app/services/datasource.service';
+import { SocialsComponent } from 'src/app/shared/components/socials/socials.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: 'header.component.html',
   styleUrls: ['header.component.scss', 'header-media.component.scss'],
   standalone: true,
-  imports: [CommonModule, RouterModule, NavBarComponent],
+  imports: [CommonModule, RouterModule, NavBarComponent, SocialsComponent],
   providers: [DataSourceService],
 })
 export class HeaderComponent implements AfterViewInit {
   protected isNavBarOpen$: BehaviorSubject<boolean> = new BehaviorSubject(
     false
   );
-  protected isSocialsOpen: boolean = false;
 
   private bgScrollEventListener = () => {};
 
-  @ViewChild('mediaContainer', { read: ElementRef })
-  mediaContainer?: ElementRef<HTMLDivElement>;
   @ViewChild('bgRect', { read: ElementRef })
   bgRect?: ElementRef<HTMLDivElement>;
-
-  private mediaContainerEventListener = () => {};
 
   constructor(
     private renderer: Renderer2,
@@ -41,31 +37,16 @@ export class HeaderComponent implements AfterViewInit {
     private router: Router
   ) {}
 
-  openSocials() {
-    this.isSocialsOpen = true;
-    this.mediaContainerEventListener = this.renderer.listen(
-      this.mediaContainer?.nativeElement,
-      'mouseleave',
-      () => {
-        this.closeSocials();
-      }
-    );
-  }
-  closeSocials() {
-    this.isSocialsOpen = false;
-    this.mediaContainerEventListener();
-  }
-
   ngAfterViewInit() {
     console.log(this.location.path());
     if (this.location.path()) {
-      this.bgRect?.nativeElement.classList.add('h-85');
+      this.bgRect?.nativeElement.classList.add('h-72');
     } else {
       this.bgScrollEventListener = this.renderer.listen(
         window,
         'scroll',
         () => {
-          this.bgRect?.nativeElement.classList.add('h-85');
+          this.bgRect?.nativeElement.classList.add('h-72');
           this.bgScrollEventListener();
         }
       );
@@ -76,7 +57,7 @@ export class HeaderComponent implements AfterViewInit {
             document
               .getElementsByClassName('header-container')[0]
               .setAttribute('style', 'background-color: #000000;');
-            this.bgRect?.nativeElement.classList.add('h-85');
+            this.bgRect?.nativeElement.classList.add('h-72');
             this.bgScrollEventListener();
           }
         });

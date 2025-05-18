@@ -1,6 +1,6 @@
-<div class="header-container h-85">
+<div class="header-container h-72">
   <div class="bgRect" #bgRect></div>
-  <div class="flex space-between align-items-start">
+  <div class="flex space-between gap-10">
     <div class="flex gap-30 align-items-center">
       <div
         class="header-button header-cirkle navBarOpen-button cursor-pointer"
@@ -56,31 +56,8 @@
       <div class="header-button cursor-pointer" routerLink="order">
         СВЯЗАТЬСЯ С НАМИ
       </div>
-      <div #mediaContainer class="mediaContainer">
-        <div
-          (mouseover)="openSocials()"
-          class="header-button header-cirkle media-button"
-        >
-          <span
-            class="media-button-text"
-            [ngClass]="{ 'rotate-45': isSocialsOpen }"
-          >
-            social
-            <br />
-            media
-          </span>
-        </div>
-        <div [ngClass]="{ 'display-none': !isSocialsOpen }" class="media-popap">
-          <div class="media-container flex gap-0">
-            <a
-              class="social cursor-pointer"
-              *ngFor="let social of dataService.socials"
-              [href]="social.link"
-            >
-              {{ social.description }}
-            </a>
-          </div>
-        </div>
+      <div class="socials-container">
+        <socials></socials>
       </div>
     </div>
     <navBar

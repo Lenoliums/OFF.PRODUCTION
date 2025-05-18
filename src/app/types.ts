@@ -7,6 +7,7 @@ type navButtonContent = {
 type Social = {
   link: string;
   description: string;
+  imgPath: string;
 };
 
 type TilingContent = {
@@ -15,6 +16,11 @@ type TilingContent = {
   description?: string;
   partner: string;
   preview: string;
+};
+
+type Partners = {
+  title: string;
+  marqueeImg: string;
 };
 
 type OptionsNames = 'Предпродакшн' | 'Продакшн' | 'Постпродакшн';
@@ -77,4 +83,5 @@ export {
   PreProductionItem,
   ProductionItem,
   PostProductionItem,
+  Partners,
 };

@@ -29,8 +29,8 @@
   justify-content: center;
   align-items: center;
 }
-.h-85 {
-  height: 85px;
+.h-72 {
+  height: 72px;
 }
 
 .flex {
@@ -41,6 +41,9 @@
 }
 .justify-content-center {
   justify-content: center;
+}
+.gap-10 {
+  gap: 10px;
 }
 .gap-20 {
   gap: 20px;
@@ -57,7 +60,7 @@
 .header-button {
   @include flex-center;
   background-color: $base-color-1;
-  height: 60px;
+  height: 48px;
   border-radius: 13px;
   text-align: center;
   vertical-align: middle;
@@ -72,20 +75,8 @@
     background-color: $base-color-3;
   }
 }
-.media-button-text {
-  display: inline-block;
-  -webkit-transition: rotate 0.2s linear;
-  transition: rotate 0.2s linear;
-}
-.media-button {
-  margin: 0 auto;
-}
-.mediaContainer {
-  height: max-content;
-  width: 90px;
-}
 .header-cirkle {
-  width: 60px;
+  width: 48px;
   border-radius: 100%;
   padding: 0;
   flex: 0;
@@ -97,21 +88,6 @@
 
 .cursor-pointer {
   cursor: pointer;
-}
-.media-popap {
-  position: relative;
-  top: 10px;
-  width: 90px;
-}
-.media-container {
-  padding: 10px;
-  flex-direction: column;
-  border-radius: 13px;
-  background-color: $base-color-3;
-}
-
-.rotate-45 {
-  rotate: -45deg;
 }
 .align-items-center {
   align-items: center;
@@ -125,11 +101,8 @@
   z-index: 12;
 }
 
-.mediaContainer {
-  z-index: 10;
-}
 .hamburger-icon {
-  margin: 20px;
+  margin: 15px;
 }
 .hamburger-icon rect {
   transition: all 0.2s ease-in-out;
@@ -155,7 +128,6 @@
   fill: var(--icon-active-color);
 }
 
-.social {
-  padding: 2.5px 0;
-  border-bottom: 1px $base-color-2 solid;
+.socials-container {
+  z-index: 11;
 }

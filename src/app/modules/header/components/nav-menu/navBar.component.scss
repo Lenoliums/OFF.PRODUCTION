@@ -23,7 +23,7 @@
 }
 
 .header-nav-bar {
-  padding-top: 85px;
+  padding-top: 72px;
   -webkit-animation: animateWidth 1s ease-out;
   @media (max-width: 950px) {
     padding-top: 65px;
@@ -76,31 +76,10 @@
   cursor: pointer;
 }
 .navBar-socialContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
   position: absolute;
   top: 15px;
   right: 30px;
   @media (max-width: 950px) {
     top: 7px;
-  }
-
-  img {
-    width: 48px;
-    height: 48px;
-    cursor: pointer;
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-  }
-  img:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-  }
-  #youtube {
-    width: 42px;
-    height: 42px;
-    margin-left: 2px;
   }
 }

@@ -6,10 +6,10 @@ video {
   top: 0;
   object-fit: cover;
   z-index: 1;
-  margin-top: -85px;
-  @media (max-width: 950px) {
-    margin-top: -65px;
-  }
+  margin-top: -75px;
+  // @media (max-width: 950px) {
+  //   margin-top: -65px;
+  // }
 }
 
 .main-container {
@@ -26,7 +26,7 @@ video {
   width: min(90%, 1440px);
   margin: 0 auto;
   background-color: $base-color-1;
-  margin-top: -30vh;
+  margin-top: -25vh;
 }
 
 @keyframes containerExpansion {
@@ -49,11 +49,10 @@ video {
   z-index: 2;
   top: 55vh;
   width: 100%;
-  font-weight: 600;
-  font-size: 4.35rem;
-  @media (max-width: 650px) {
-    font-size: 3rem;
-    top: 60vh;
+  * {
+    color: $base-color-1;
+    margin: auto;
+    width: fit-content;
   }
 }
 .main-logo-container-scrolled {
@@ -63,10 +62,15 @@ video {
   top: 33px;
   left: -325px;
 }
+.main-logo {
+  font-weight: 600;
+  font-size: 4.35rem;
+  @media (max-width: 550px) {
+    font-size: 3rem;
+  }
+}
 .main-logo-text {
-  margin: auto;
-  width: min-content;
-  color: $base-color-1;
+  font-size: 1.3rem;
 }
 
 .space-between {
@@ -76,6 +80,9 @@ video {
 .flex {
   display: flex;
 }
+.flex-column {
+  flex-direction: column;
+}
 
 .p-20 {
   padding: 20px;
@@ -84,8 +91,75 @@ video {
 .cursor-pointer {
   cursor: pointer;
 }
-
 .case-header {
   font-size: 1.3rem;
   font-weight: 600;
+  display: inline-block;
+}
+.case-header:after {
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0%;
+  background-color: $base-color-2;
+  transition: width 0.4s ease-in-out;
+}
+
+.case-header:hover:after,
+.case-header:focus:after {
+  width: 100%;
+}
+
+.align-end {
+  text-align: end;
+}
+
+.about-header {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.flex-50 {
+  flex: 1 0 50%;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.about-text {
+}
+.about-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $base-color-2;
+  color: $base-color-1;
+  height: 40px;
+  border-radius: 13px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 25px;
+  flex: 1;
+  max-width: 150px;
+  z-index: 10;
+  font-size: 1rem;
+  text-wrap: nowrap;
+  @media (max-width: 550px) {
+    max-width: none;
+  }
+}
+.about-button:hover {
+  background-color: $base-color-3;
+  color: $base-color-2;
+}
+.gap-10 {
+  gap: 10px;
+}
+.gap-20 {
+  gap: 20px;
+}
+.about-img {
+  width: 40%;
+  object-fit: cover;
 }

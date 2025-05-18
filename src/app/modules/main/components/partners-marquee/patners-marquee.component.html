@@ -1,23 +1,35 @@
-<div class="patners-bg">
-    нас выбирают
-</div>
+<div class="patners-bg">нас выбирают</div>
 <div class="patners-container">
-    <marquee
-        *ngFor="let partnersLine of partnersLines; let i=index"
-        [direction]="i%2===0 ? 'left' : 'right'"
-        onmouseout="this.start()"
-        onmouseover="this.stop()"
-        height="33%"
-    >
-    <ng-container
-        *ngFor="let partner of partnersLine;"
-    >
-            <span 
-                class="partner-span"
-                *ngFor="let partner of partnersLine;"
-            >
-                {{partner}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-        </ng-container>
-    </marquee>
+  <div
+    class="marquee-row"
+    *ngFor="let partnersLine of partnersLines; let i = index"
+    [ngClass]="{ reverse: i % 2 !== 0 }"
+  >
+    <div class="marquee-content">
+      <ng-container *ngIf="i % 2 === 0; else imgs">
+        <span class="partner-span" *ngFor="let partner of partnersLine">
+          {{ partner }}
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <!-- Дублируем контент для бесшовности -->
+        <span class="partner-span" *ngFor="let partner of partnersLine">
+          {{ partner }}
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+      </ng-container>
+      <ng-template #imgs>
+        <img
+          class="partner-img"
+          *ngFor="let partner of partnersLine"
+          [src]="partner"
+        />
+        <!-- Дублируем изображения для бесшовности -->
+        <img
+          class="partner-img"
+          *ngFor="let partner of partnersLine"
+          [src]="partner"
+        />
+      </ng-template>
+    </div>
+  </div>
 </div>
