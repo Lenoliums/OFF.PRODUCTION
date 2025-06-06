@@ -1,5 +1,5 @@
 <div class="header-nav-bar flex gap-0">
-  <div
+  <a
     class="navBar-button cursor-pointer"
     *ngFor="let content of dataService.navButtonsContent"
     (click)="close.emit(false)"
@@ -11,7 +11,7 @@
     <div class="navBar-button-ru display-none cursor-pointer">
       {{ content.ruTitle }}
     </div>
-  </div>
+  </a>
   <socials class="navBar-socialContainer"></socials>
 </div>
 <div class="navBar-bg" #navBarBg></div>

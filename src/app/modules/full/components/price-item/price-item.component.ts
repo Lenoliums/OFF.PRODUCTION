@@ -1,12 +1,7 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { BehaviorSubject, first } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { DataSourceService } from 'src/app/services/datasource.service';
 import { fullCart } from 'src/app/types';
 
@@ -15,7 +10,7 @@ import { fullCart } from 'src/app/types';
   templateUrl: 'price-item.component.html',
   styleUrls: ['price-item.component.scss'],
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterModule],
   providers: [DataSourceService],
 })
 export class PriceItemComponent implements OnInit {

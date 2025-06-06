@@ -9,6 +9,24 @@ body {
   justify-content: center;
   align-items: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
+.align-baseline {
+  align-items: baseline;
+}
+.flex {
+  display: flex;
+}
+.full-width {
+  width: 100%;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
 
 /* Proxima Nova Thin (100) */
 // @font-face {
@@ -208,6 +226,9 @@ $error-color: #ff0000;
 .base-color-1 {
   color: $base-color-1;
 }
+.flex-column {
+  flex-direction: column;
+}
 
 .cursor-pointer {
   cursor: pointer;
@@ -216,7 +237,7 @@ input {
   cursor: auto;
 }
 .header {
-  margin: 20px;
+  margin: 20px 0;
   font-size: 2rem;
 }
 // body{
@@ -229,4 +250,9 @@ input {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
+  display: block;
+}
+
+.section {
+  @include section();
 }

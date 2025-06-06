@@ -1,8 +1,8 @@
 @import "../../../styles.scss";
 :host {
-  display: block;
   background: radial-gradient(closest-corner, $base-color-3, $base-color-1);
   box-shadow: 0 0 40px 40px $base-color-1 inset;
+  min-height: calc(100vh - 72px);
   @include section();
 }
 .carouselContainer {
@@ -15,4 +15,17 @@
 }
 .header {
   background-color: transparent;
+}
+
+.price-container {
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4rem;
+
+  @media (max-width: 900px) {
+    flex-wrap: wrap;
+    > * {
+      min-width: 100%;
+    }
+  }
 }

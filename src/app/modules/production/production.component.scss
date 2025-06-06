@@ -1,0 +1,38 @@
+@import "../../../styles.scss";
+:host {
+  display: block;
+  min-height: calc(100vh - 72px);
+  background-color: $base-color-2;
+  * {
+    color: $base-color-1;
+    background-color: $base-color-2;
+  }
+}
+.about-container {
+  padding-top: 4rem;
+}
+.arrow-left {
+  width: 30px;
+  height: 30px;
+  -moz-transform: scale(-1, -1);
+  -o-transform: scale(-1, -1);
+  -webkit-transform: scale(-1, -1);
+  transform: scale(-1, -1);
+}
+.gap-10 {
+  gap: 10px;
+}
+.gap-40 {
+  gap: 40px;
+}
+.about-img {
+  width: 40%;
+  object-fit: cover;
+  min-height: calc(100vh - 72px);
+}
+.flex-50 {
+  flex: 1 0 50%;
+}
+.p-1r {
+  padding: 1rem;
+}

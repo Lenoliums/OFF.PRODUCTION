@@ -76,10 +76,6 @@
   cursor: pointer;
 }
 .navBar-socialContainer {
-  position: absolute;
-  top: 15px;
-  right: 30px;
-  @media (max-width: 950px) {
-    top: 7px;
-  }
+  width: max-content;
+  margin: 21px 40px;
 }

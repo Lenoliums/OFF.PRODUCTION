@@ -12,15 +12,13 @@
     <div class="main-logo-text">- видеосъемка и короткий текст описания</div>
   </div>
   <div class="main-content-container main-content-container-expansion">
-    <div class="p-20 section align-end">
-      <span class="cursor-pointer case-header" routerLink="official">
+    <div class="section align-end">
+      <a class="cursor-pointer case-header p-20" routerLink="official">
         Смотреть портфолио
-      </span>
+      </a>
+
+      <tiling [content]="dataService.portfolio.slice(0, 4)"></tiling>
     </div>
-    <tiling
-      class="section"
-      [content]="dataService.portfolio.slice(0, 4)"
-    ></tiling>
     <div class="about-container section">
       <div class="about-header">О нас:</div>
       <div class="flex gap-10">
@@ -36,14 +34,14 @@
             laborum."
           </div>
           <div class="flex flex-wrap gap-10">
-            <div class="about-button" routerLink="/order">Обсудить проект</div>
-            <div class="about-button">show real</div>
+            <a class="about-button" routerLink="/order">Обсудить проект</a>
+            <a class="about-button">show real</a>
           </div>
         </div>
 
         <img
           class="about-img"
-          src="../../../assets/celovek-snimausii-na-professional-nuu-kameru.jpg"
+          src="./assets/celovek-snimausii-na-professional-nuu-kameru.jpg"
         />
       </div>
     </div>

@@ -30,10 +30,12 @@ export class DataSourceService {
     {
       enTitle: 'FRAME',
       ruTitle: 'КЛИЕНТЫ',
+      path: 'frame',
     },
     {
       enTitle: 'PRODUCTION',
       ruTitle: 'КОМАНДА',
+      path: 'production',
     },
   ];
 
@@ -165,26 +167,26 @@ export class DataSourceService {
   ];
 
   public readonly fullCards: Array<fullCart> = [
-    {
-      name: 'Стандартная видеосъемка',
-      price: 0,
+    // {
+    //   name: 'Стандартная видеосъемка',
+    //   price: 0,
 
-      preProduction: {
-        optionsName: 'Предпродакшн',
-        options: new Set(['Сценарий']),
-        allOptions: this.PreProductionItems,
-      },
-      production: {
-        optionsName: 'Продакшн',
-        options: new Set(['Сокращенная команда', 'Упрощенное оборудование']),
-        allOptions: this.ProductionItems,
-      },
-      postProduction: {
-        optionsName: 'Постпродакшн',
-        options: new Set(['Монтаж', 'Инфографика', 'Саунд дизайн']),
-        allOptions: this.PostProductionItems,
-      },
-    },
+    //   preProduction: {
+    //     optionsName: 'Предпродакшн',
+    //     options: new Set(['Сценарий']),
+    //     allOptions: this.PreProductionItems,
+    //   },
+    //   production: {
+    //     optionsName: 'Продакшн',
+    //     options: new Set(['Сокращенная команда', 'Упрощенное оборудование']),
+    //     allOptions: this.ProductionItems,
+    //   },
+    //   postProduction: {
+    //     optionsName: 'Постпродакшн',
+    //     options: new Set(['Монтаж', 'Инфографика', 'Саунд дизайн']),
+    //     allOptions: this.PostProductionItems,
+    //   },
+    // },
     {
       name: 'Рекламная видеосъемка',
       price: 0,

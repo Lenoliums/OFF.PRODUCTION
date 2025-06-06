@@ -4,27 +4,41 @@ import { MainPageComponent } from './modules/main/main-page.component';
 import { OfficialPageComponent } from './modules/official/official-page.component';
 import { OrderPageComponent } from './modules/order/order.component';
 import { FullPageComponent } from './modules/full/full-page.component';
+import { ProductionPageComponent } from './modules/production/production.component';
 
-const routes: Routes = [{
+const routes: Routes = [
+  {
     path: '',
-    component: MainPageComponent
+    component: MainPageComponent,
   },
   {
     path: 'official',
-    component: OfficialPageComponent
+    component: OfficialPageComponent,
   },
   {
     path: 'order',
-    component: OrderPageComponent
+    component: OrderPageComponent,
   },
   {
     path: 'full',
-    component: FullPageComponent
-  }
+    component: FullPageComponent,
+  },
+  {
+    path: 'production',
+    component: ProductionPageComponent,
+  },
 ];
 
 @NgModule({
-  imports: [MainPageComponent, OfficialPageComponent, OrderPageComponent, FullPageComponent, RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    MainPageComponent,
+    OfficialPageComponent,
+    OrderPageComponent,
+    FullPageComponent,
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

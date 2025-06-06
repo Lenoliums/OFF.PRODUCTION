@@ -1,11 +1,12 @@
 @import "../../../../../styles.scss";
 :host {
   display: flex;
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   height: 100%;
   background-color: transparent;
-  margin: auto;
+  // margin: auto;
   max-width: 400px;
+  justify-content: center;
 }
 .price-container {
   border-radius: 20px;
@@ -20,6 +21,9 @@
   padding: 20px;
   padding-bottom: 10px;
   flex: 1 0;
+  @media (min-width: 901px) {
+    min-height: 330px;
+  }
 }
 
 .price-optionContainer {
@@ -47,7 +51,12 @@
 
 .price-headerContainer {
   padding: 10px 20px;
+  @media (min-width: 901px) {
+    height: 180px;
+  }
   font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .price-optionHeader {
@@ -62,6 +71,7 @@ div:has(> .price-amount) {
   font-size: 2rem;
 }
 .price-button {
+  display: block;
   border-radius: 12px;
   border: 3px solid #efefef;
   color: $base-color-3;
@@ -78,6 +88,7 @@ div:has(> .price-amount) {
 }
 .price-header {
   margin-bottom: 5px;
+  flex: 1;
 }
 .price-checkbox {
   -webkit-appearance: none;

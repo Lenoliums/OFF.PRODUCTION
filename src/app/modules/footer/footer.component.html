@@ -1,0 +1,23 @@
+<div class="footer-container flex align-baseline justify-between flex-wrap">
+  <div class="flex flex-nowrap">
+    <a class="footer-logo cursor-pointer" routerLink="/">OFF.PRODUCTION</a>
+    <div></div>
+    <div class="start-line flex width-min">
+      <div class="sitemap-container flex-center full-width">
+        <a
+          class="cursor-pointer"
+          *ngFor="let content of siteMapContent"
+          [routerLink]="content.path"
+          >{{ content.enTitle }}</a
+        >
+      </div>
+      <socials class="socials-md"></socials>
+      <div class="pt-07rem full-width flex-center">© 2025 OFF.PRODUCTION</div>
+    </div>
+  </div>
+  <div class="mail-container">Support: mail&#64;mail.ru</div>
+  <!-- <div class="socials-container width-min">
+    <socials></socials>
+    <div class="pt-07rem">Support: mail&#64;mail.ru</div>
+  </div> -->
+</div>

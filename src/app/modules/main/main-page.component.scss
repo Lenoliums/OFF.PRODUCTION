@@ -15,10 +15,7 @@ video {
 .main-container {
   width: 100%;
 }
-.section {
-  @include section();
-  display: block;
-}
+
 .main-content-container {
   z-index: 2;
   position: relative;
@@ -125,8 +122,6 @@ video {
 }
 .flex-wrap {
   flex-wrap: wrap;
-}
-.about-text {
 }
 .about-button {
   cursor: pointer;

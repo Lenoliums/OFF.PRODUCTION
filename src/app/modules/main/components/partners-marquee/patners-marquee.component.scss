@@ -43,8 +43,11 @@
 
 :host {
   margin-top: 60px;
+  padding-bottom: 60px;
+  display: block;
   @media (max-width: 650px) {
     margin-top: 20px;
+    padding-bottom: 20px;
   }
 }
 

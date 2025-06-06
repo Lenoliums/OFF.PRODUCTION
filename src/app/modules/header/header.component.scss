@@ -7,9 +7,6 @@
   top: 0;
   z-index: 10;
 }
-.section {
-  @include section();
-}
 .align-items-start {
   align-items: flex-start !important;
 }

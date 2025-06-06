@@ -11,9 +11,7 @@
   // }
   background-color: $base-color-2;
 }
-.section {
-  @include section();
-}
+
 .order-container {
   width: 100%;
   max-width: 450px;

@@ -1,6 +1,6 @@
 <div class="header-container h-72">
   <div class="bgRect" #bgRect></div>
-  <div class="flex space-between gap-10">
+  <div class="flex space-between gap-10 section">
     <div class="flex gap-30 align-items-center">
       <div
         class="header-button header-cirkle navBarOpen-button cursor-pointer"
@@ -43,7 +43,7 @@
           />
         </svg>
       </div>
-      <div class="header-logo">OFF.PRODUCTION</div>
+      <a class="header-logo cursor-pointer" routerLink="">OFF.PRODUCTION</a>
     </div>
 
     <div class="flex-center align-items-start gap-20">
@@ -53,9 +53,9 @@
       >
         {{ dataService.phoneNumber }}
       </a>
-      <div class="header-button cursor-pointer" routerLink="order">
+      <a class="header-button cursor-pointer" routerLink="order">
         СВЯЗАТЬСЯ С НАМИ
-      </div>
+      </a>
       <div class="socials-container">
         <socials></socials>
       </div>

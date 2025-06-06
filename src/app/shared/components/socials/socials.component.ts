@@ -1,14 +1,6 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { BehaviorSubject, first } from 'rxjs';
+import { Component } from '@angular/core';
 import { DataSourceService } from 'src/app/services/datasource.service';
-import { fullCart } from 'src/app/types';
 
 @Component({
   selector: 'socials',
