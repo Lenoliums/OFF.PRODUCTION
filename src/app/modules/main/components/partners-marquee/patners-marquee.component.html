@@ -2,33 +2,27 @@
 <div class="patners-container">
   <div
     class="marquee-row"
-    *ngFor="let partnersLine of partnersLines; let i = index"
-    [ngClass]="{ reverse: i % 2 !== 0 }"
+    *ngFor="let line of partnersLines; index as i"
+    [class.reverse]="i % 2 !== 0"
   >
     <div class="marquee-content">
-      <ng-container *ngIf="i % 2 === 0; else imgs">
-        <span class="partner-span" *ngFor="let partner of partnersLine">
-          {{ partner }}
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span>
-        <!-- Дублируем контент для бесшовности -->
-        <span class="partner-span" *ngFor="let partner of partnersLine">
-          {{ partner }}
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span>
+      <!-- Две копии: текстовая или графическая -->
+      <ng-container *ngIf="i % 2 === 0; else images">
+        <ng-container *ngFor="let _ of [0, 1]">
+          <span class="partner-span" *ngFor="let partner of line">
+            {{ partner }}
+          </span>
+        </ng-container>
       </ng-container>
-      <ng-template #imgs>
-        <img
-          class="partner-img"
-          *ngFor="let partner of partnersLine"
-          [src]="partner"
-        />
-        <!-- Дублируем изображения для бесшовности -->
-        <img
-          class="partner-img"
-          *ngFor="let partner of partnersLine"
-          [src]="partner"
-        />
+      <ng-template #images>
+        <ng-container *ngFor="let _ of [0, 1]">
+          <img
+            class="partner-img"
+            *ngFor="let src of line"
+            [src]="src"
+            alt="partner logo"
+          />
+        </ng-container>
       </ng-template>
     </div>
   </div>

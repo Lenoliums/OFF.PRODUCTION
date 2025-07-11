@@ -36,3 +36,12 @@
 .p-1r {
   padding: 1rem;
 }
+.about-text {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  span {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+}

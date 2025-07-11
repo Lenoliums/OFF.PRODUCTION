@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataSourceService } from 'src/app/services/datasource.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { DataSourceService } from 'src/app/services/datasource.service';
   providers: [DataSourceService],
   imports: [CommonModule],
 })
-export class PatnersMarqueeComponent implements OnInit {
+export class PatnersMarqueeComponent {
   partnersLines: Array<Array<string>> = [];
 
   constructor(private dataService: DataSourceService) {
@@ -27,6 +27,4 @@ export class PatnersMarqueeComponent implements OnInit {
       );
     }
   }
-
-  ngOnInit() {}
 }

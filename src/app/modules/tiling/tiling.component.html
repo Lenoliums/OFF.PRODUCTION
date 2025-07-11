@@ -1,22 +1,15 @@
 <div class="tiling-container">
-    <div
-        *ngFor="let case of content"
-        class="case-container"
-    >
-        <div
-            class="img-container cursor-pointer"
-        >
-            <div
-                class="description-container cursor-pointer"
-            >
-                {{case.description}}
-            </div>
-            <img 
-                [src]="case.preview" alt="картиночка"
-            >
+  <div *ngFor="let case of content" class="case-container">
+    <div class="img-container cursor-pointer scale-slide">
+      <div class="description-overlay">
+        <div class="description-content">
+          <h3 class="title-animate">{{ case.title }}</h3>
+          <p class="description-animate">{{ case.description }}</p>
         </div>
-        <div class="tiling-title">{{case.title}}</div>
-        <div class="tiling-partner">{{case.partner}}</div>
+      </div>
+      <img [src]="case.preview" alt="{{ case.title }}" />
     </div>
-
+    <div class="tiling-title">{{ case.title }}</div>
+    <div class="tiling-partner">{{ case.partner }}</div>
+  </div>
 </div>

@@ -23,7 +23,7 @@ video {
   width: min(90%, 1440px);
   margin: 0 auto;
   background-color: $base-color-1;
-  margin-top: -25vh;
+  margin-top: calc(140px - 42vh);
 }
 
 @keyframes containerExpansion {
@@ -49,7 +49,6 @@ video {
   * {
     color: $base-color-1;
     margin: auto;
-    width: fit-content;
   }
 }
 .main-logo-container-scrolled {
@@ -60,6 +59,7 @@ video {
   left: -325px;
 }
 .main-logo {
+  width: min-content;
   font-weight: 600;
   font-size: 4.35rem;
   @media (max-width: 550px) {
@@ -67,7 +67,10 @@ video {
   }
 }
 .main-logo-text {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 0 2rem;
 }
 
 .space-between {
@@ -89,7 +92,7 @@ video {
   cursor: pointer;
 }
 .case-header {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
   display: inline-block;
 }
@@ -112,7 +115,7 @@ video {
 }
 
 .about-header {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin: 20px 0;
 }
@@ -123,6 +126,45 @@ video {
 .flex-wrap {
   flex-wrap: wrap;
 }
+.about-bullets-list {
+  padding: 10px;
+
+  .about-bullet {
+    position: relative;
+    font-size: 1.3rem;
+    margin-bottom: 1.3em;
+    width: fit-content;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: $base-color-3;
+    // border-bottom: 2px solid $base-color-2;
+
+    transition: transform 0.3s ease, text-decoration-color 0.3s ease;
+
+    &:hover {
+      transform: translateX(1em);
+      text-decoration-thickness: 2px;
+      text-decoration-color: $base-color-2;
+    }
+
+    &::before {
+      content: "→";
+      position: absolute;
+      left: -1.5em;
+      top: 50%;
+      transform: translateY(-50%) translateX(0);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    &:hover::before {
+      transform: translateY(-50%) translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
 .about-button {
   cursor: pointer;
   display: flex;

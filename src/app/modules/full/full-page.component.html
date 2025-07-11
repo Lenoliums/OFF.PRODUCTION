@@ -1,17 +1,7 @@
-<div class="header">ПРАЙСЫ</div>
-<div class="price-container flex">
+<div class="header">Прайс-листы</div>
+<div class="price-container">
   <price-item
-    *ngFor="let card of fullCards"
-    class="price-item"
+    *ngFor="let card of fullCards; trackBy: trackByCard"
     [fullCart]="card"
   ></price-item>
 </div>
-<!-- <div class="carouselContainer">
-  <owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let card of fullCards; index as i">
-      <ng-template carouselSlide [id]="i + ''">
-        <price-item class="price-item" [fullCart]="card"></price-item>
-      </ng-template>
-    </ng-container>
-  </owl-carousel-o>
-</div> -->

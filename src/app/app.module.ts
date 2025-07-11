@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './modules/header/header.component';
 import { FooterComponent } from './modules/footer/footer.component';
+import { ContactButtonComponent } from './modules/contact-button/contact-button.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { FooterComponent } from './modules/footer/footer.component';
     AppRoutingModule,
     HeaderComponent,
     FooterComponent,
+    ContactButtonComponent,
     NgxMaskModule.forRoot(),
     BrowserAnimationsModule,
   ],

@@ -1,10 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { DataSourceService } from 'src/app/services/datasource.service';
 import { fullCart } from 'src/app/types';
 
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+registerLocaleData(localeRu, 'ru');
 @Component({
   selector: 'price-item',
   templateUrl: 'price-item.component.html',
@@ -13,41 +16,48 @@ import { fullCart } from 'src/app/types';
   imports: [CommonModule, RouterModule],
   providers: [DataSourceService],
 })
-export class PriceItemComponent implements OnInit {
+export class PriceItemComponent implements OnInit, OnDestroy {
   @Input() fullCart?: fullCart;
-  protected isOptional = new BehaviorSubject(false);
-  protected choosenOptions = new Set();
+
+  protected isOptional = new BehaviorSubject<boolean>(false);
+  protected isOpen = false;
+  protected choosenOptions = new Set<string>();
+
+  private destroy$ = new Subject<void>();
 
   constructor() {}
 
   ngOnInit(): void {
-    if (
-      !this.fullCart?.postProduction.options.size &&
-      !this.fullCart?.production.options.size &&
-      !this.fullCart?.preProduction.options.size
-    ) {
+    if (!this.fullCart?.inclusion?.length) {
       this.isOptional.next(true);
     }
   }
 
-  protected clickCheckBox(option: string) {
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  protected toggleExpansion(): void {
+    this.isOpen = !this.isOpen;
+  }
+
+  protected clickCheckBox(option: string): void {
     if (this.choosenOptions.has(option)) {
       this.choosenOptions.delete(option);
     } else {
       this.choosenOptions.add(option);
     }
+    this.choosenOptions = new Set(this.choosenOptions);
   }
-  protected choosenProps() {
+
+  protected choosenProps(): string {
     if (!this.fullCart) return '';
+
     if (this.isOptional.value) {
       return Array.from(this.choosenOptions).join(',');
     }
-    return (
-      Array.from(this.fullCart.preProduction.options).join(',') +
-      ',' +
-      Array.from(this.fullCart.production.options).join(',') +
-      ',' +
-      Array.from(this.fullCart.postProduction.options).join(',')
-    );
+
+    return this.fullCart.name;
   }
 }

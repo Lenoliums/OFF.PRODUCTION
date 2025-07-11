@@ -41,19 +41,19 @@ export class DataSourceService {
 
   public readonly socials: Array<Social> = [
     {
-      link: '',
+      link: 'https://vk.com/offullframe',
       description: 'VK',
       imgPath: './assets/icons/vk.svg',
     },
     {
-      link: '',
+      link: 'https://t.me/offullframe',
       description: 'Telegram',
       imgPath: './assets/icons/tg.svg',
     },
     {
-      link: '',
-      description: 'YouTube',
-      imgPath: './assets/icons/youtube.svg',
+      link: 'https://www.instagram.com/offulframe?igsh=dGZvdHU1NmhsNWZx&utm_source=qr',
+      description: 'Instagram',
+      imgPath: './assets/icons/instagram.svg',
     },
   ];
 
@@ -167,82 +167,92 @@ export class DataSourceService {
   ];
 
   public readonly fullCards: Array<fullCart> = [
-    // {
-    //   name: 'Стандартная видеосъемка',
-    //   price: 0,
-
-    //   preProduction: {
-    //     optionsName: 'Предпродакшн',
-    //     options: new Set(['Сценарий']),
-    //     allOptions: this.PreProductionItems,
-    //   },
-    //   production: {
-    //     optionsName: 'Продакшн',
-    //     options: new Set(['Сокращенная команда', 'Упрощенное оборудование']),
-    //     allOptions: this.ProductionItems,
-    //   },
-    //   postProduction: {
-    //     optionsName: 'Постпродакшн',
-    //     options: new Set(['Монтаж', 'Инфографика', 'Саунд дизайн']),
-    //     allOptions: this.PostProductionItems,
-    //   },
-    // },
     {
-      name: 'Рекламная видеосъемка',
-      price: 0,
-      preProduction: {
-        optionsName: 'Предпродакшн',
-        options: new Set(['Сценарий']),
-        allOptions: this.PreProductionItems,
-      },
-      production: {
-        optionsName: 'Продакшн',
-        options: new Set(['Сокращенная команда', 'Упрощенное оборудование']),
-        allOptions: this.ProductionItems,
-      },
-      postProduction: {
-        optionsName: 'Постпродакшн',
-        options: new Set(['Монтаж', 'Инфографика', 'Саунд дизайн']),
-        allOptions: this.PostProductionItems,
-      },
+      name: 'Рекламный ролик (бренд, продукт)',
+      price: 150000,
+      inclusion: [
+        'Разработка концепции и сценария',
+        'Подбор локаций, актёров, реквизита',
+        'Съёмка (1–2 смены)',
+        'Режиссёр, оператор, ассистенты',
+        'Свет, звук, техника',
+        'Постпродакшн: монтаж, цветокор, графика, саунд-дизайн',
+      ],
     },
     {
-      name: 'Графический видеоролик',
-      price: 0,
-      preProduction: {
-        optionsName: 'Предпродакшн',
-        options: new Set(['Сценарий']),
-        allOptions: this.PreProductionItems,
-      },
-      production: {
-        optionsName: 'Продакшн',
-        options: new Set(['Сокращенная команда', 'Упрощенное оборудование']),
-        allOptions: this.ProductionItems,
-      },
-      postProduction: {
-        optionsName: 'Постпродакшн',
-        options: new Set(['Монтаж', 'Инфографика', 'Саунд дизайн']),
-        allOptions: this.PostProductionItems,
-      },
+      name: 'Презентационный мини-фильм (для компании)',
+      price: 80000,
+      inclusion: [
+        'Интервью с руководством и сотрудниками',
+        'Съёмка на производстве/в офисе',
+        'Дроны, графика, титры',
+        'Написание сценария и режиссура',
+        'Озвучка, музыка',
+        'Монтаж (2–5 мин финальный продукт)',
+      ],
     },
     {
-      name: 'Свой варинат',
-      price: 5000,
-      preProduction: {
-        optionsName: 'Предпродакшн',
-        options: new Set([]),
-        allOptions: this.PreProductionItems,
-      },
-      production: {
-        optionsName: 'Продакшн',
-        options: new Set([]),
-        allOptions: this.ProductionItems,
-      },
-      postProduction: {
-        optionsName: 'Постпродакшн',
-        options: new Set([]),
-        allOptions: this.PostProductionItems,
-      },
+      name: 'Репортажная съёмка (событие, конференция, выставка)',
+      price: 30000,
+      inclusion: [
+        '1–2 оператора',
+        'Мобильный свет, петлички',
+        'Быстрый монтаж (можно сдать в течение суток)',
+        'Титры, лого, музыка',
+        'Возможность монтажа reels/shorts',
+      ],
+    },
+    {
+      name: 'Интервью',
+      price: 30000,
+      inclusion: [
+        'Подготовка локации',
+        'Свет, 2 камеры, звук',
+        'Монтаж, титры',
+        'Готовая версия + фрагменты для соцсетей',
+      ],
+    },
+    {
+      name: 'Подкаст',
+      price: 25000,
+      inclusion: [
+        '2–4 камеры',
+        'Звукозапись (петлички/шумоподавление)',
+        'Свет',
+        'Монтаж, титры, оформление',
+        'Подготовка видео и аудиоформата',
+      ],
+    },
+    {
+      name: 'Обучающие ролики',
+      price: 30000,
+      inclusion: [
+        'Сценарий, раскадровка',
+        'Запись лекции или постановочных сцен',
+        'Инфографика, анимация, субтитры',
+        'Монтаж, саунд-дизайн',
+      ],
+    },
+    {
+      name: 'Обзоры (товаров, услуг)',
+      price: 30000,
+      inclusion: [
+        'Сценарий, локация',
+        'Съёмка с демонстрацией продукта',
+        'Озвучка или ведущий',
+        'Постобработка, графика, вставки',
+      ],
+    },
+    {
+      name: 'Съёмка спортивных мероприятий',
+      price: 50000,
+      inclusion: [
+        'Многокамерная съёмка (в том числе с дронов, GoPro)',
+        'Репортаж + slow-motion фрагменты',
+        'Прямой эфир (по запросу)',
+        'Монтаж хайлайтов',
+        'Комментаторская дорожка (опция)',
+      ],
     },
   ];
 

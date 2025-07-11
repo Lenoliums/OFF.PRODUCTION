@@ -67,9 +67,7 @@ interface PostProductionItem {
 type fullCart = {
   name: string;
   price: number;
-  preProduction: PreProductionItem;
-  production: ProductionItem;
-  postProduction: PostProductionItem;
+  inclusion: Array<string>;
 };
 
 export {
