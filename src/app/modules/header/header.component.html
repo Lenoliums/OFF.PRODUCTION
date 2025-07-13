@@ -50,10 +50,15 @@
       <a
         class="header-button cursor-pointer header-telephone"
         [href]="'tel:' + dataService.phoneNumber"
+        (click)="ymService.reachGoal('header-PhoneClick');"
       >
         {{ dataService.phoneNumber }}
       </a>
-      <a class="header-button cursor-pointer" routerLink="order">
+      <a 
+        class="header-button cursor-pointer" 
+        routerLink="order"
+        [state]="{ymGoalName: 'header-OrderClick'}"
+      >
         СВЯЗАТЬСЯ С НАМИ
       </a>
       <div class="socials-container">

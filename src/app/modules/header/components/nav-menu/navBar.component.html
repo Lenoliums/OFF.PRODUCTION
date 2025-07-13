@@ -4,6 +4,7 @@
     *ngFor="let content of dataService.navButtonsContent"
     (click)="close.emit(false)"
     [routerLink]="content.path"
+    [state]="{ ymGoalName: 'navBar-NavigationTo' + content.enTitle }"
   >
     <div class="navBar-button-eng">
       {{ content.enTitle }}

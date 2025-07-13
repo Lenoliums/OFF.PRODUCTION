@@ -12,6 +12,8 @@ import {
 import { RouterModule } from '@angular/router';
 import { DataSourceService } from 'src/app/services/datasource.service';
 import { SocialsComponent } from 'src/app/shared/components/socials/socials.component';
+import { YmNavigationGoalService } from 'src/app/shared/services/yandex-metrica/utils/ym-navigation-goal.service';
+import { YmService } from 'src/app/shared/services/yandex-metrica/ym.service';
 
 @Component({
   selector: 'navBar',
@@ -19,7 +21,7 @@ import { SocialsComponent } from 'src/app/shared/components/socials/socials.comp
   styleUrls: ['navBar.component.scss'],
   standalone: true,
   imports: [CommonModule, RouterModule, SocialsComponent],
-  providers: [DataSourceService],
+  providers: [DataSourceService, YmNavigationGoalService, YmService],
 })
 export class NavBarComponent implements AfterViewInit, OnDestroy {
   @ViewChild('navBarBg', { read: ElementRef })

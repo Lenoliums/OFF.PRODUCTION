@@ -8,6 +8,7 @@
           class="cursor-pointer"
           *ngFor="let content of siteMapContent"
           [routerLink]="content.path"
+          [state]="{ ymGoalName: 'footer-NavigationTo' + content.enTitle }"
           >{{ content.enTitle }}</a
         >
       </div>
@@ -15,9 +16,5 @@
       <div class="pt-07rem full-width flex-center">© 2025 OFF.PRODUCTION</div>
     </div>
   </div>
-  <div class="mail-container">Support: mail&#64;mail.ru</div>
-  <!-- <div class="socials-container width-min">
-    <socials></socials>
-    <div class="pt-07rem">Support: mail&#64;mail.ru</div>
-  </div> -->
+  <div class="mail-container">Support: offprod&#64;yandex.ru</div>
 </div>

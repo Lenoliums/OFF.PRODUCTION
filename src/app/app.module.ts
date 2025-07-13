@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './modules/header/header.component';
 import { FooterComponent } from './modules/footer/footer.component';
 import { ContactButtonComponent } from './modules/contact-button/contact-button.component';
+import { YmNavigationGoalService } from './shared/services/yandex-metrica/utils/ym-navigation-goal.service';
+import { YmService } from './shared/services/yandex-metrica/ym.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +22,10 @@ import { ContactButtonComponent } from './modules/contact-button/contact-button.
     NgxMaskModule.forRoot(),
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    YmNavigationGoalService,
+    YmService, 
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
