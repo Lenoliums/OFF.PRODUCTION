@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "predeploy": "ng build --base-href /OFF.PRODUCTION/",
+    "deploy": "ngh --dir dist/off-prod"
   },
   "private": true,
   "dependencies": {

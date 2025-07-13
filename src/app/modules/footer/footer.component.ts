@@ -14,6 +14,6 @@ import { YmNavigationGoalService } from 'src/app/shared/services/yandex-metrica/
   providers: [DataSourceService, YmNavigationGoalService],
 })
 export class FooterComponent {
-  protected siteMapContent = this.dataService.navButtonsContent.slice(1);
-  constructor(private dataService: DataSourceService) {}
+  protected siteMapContent = this.dataService.navButtonsContent;
+  constructor(protected dataService: DataSourceService) {}
 }
