@@ -55,14 +55,14 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50% - 75px));
+    transform: translateX(calc(-50%));
   }
 }
 
-.partner-span:last-child,
-.partner-img:last-child {
-  margin-right: 0;
-}
+// .partner-span:last-child,
+// .partner-img:last-child {
+//   margin-right: 0;
+// }
 
 .partner-span {
   font-size: 1rem;

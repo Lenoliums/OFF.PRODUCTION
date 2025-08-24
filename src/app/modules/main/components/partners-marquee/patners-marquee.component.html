@@ -6,7 +6,6 @@
     [class.reverse]="i % 2 !== 0"
   >
     <div class="marquee-content">
-      <!-- Две копии: текстовая или графическая -->
       <ng-container *ngIf="i % 2 === 0; else images">
         <ng-container *ngFor="let _ of [0, 1]">
           <span class="partner-span" *ngFor="let partner of line">
