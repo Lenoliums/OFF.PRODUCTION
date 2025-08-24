@@ -4,7 +4,7 @@
     <div class="price-info">
       <div class="price-label">Бюджет</div>
       <div class="price-amount">
-        {{ fullCart.price | number : "1.0-0" : "ru-RU" }}
+        {{ fullCart.price | currency:'RUB':'symbol':'1.0-0':'ru-RU' }}
       </div>
     </div>
     <a
