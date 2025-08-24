@@ -78,6 +78,10 @@ export class DataSourceService {
       title: 'YOUTA',
       marqueeImg: './assets/partners/йота.png',
     },
+    {
+      title: 'Сrabbit',
+      marqueeImg: './assets/partners/крэббит.png',
+    },
   ];
 
   public readonly phoneNumber: string = '+7 (953) 326-96-62';
