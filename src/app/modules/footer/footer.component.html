@@ -1,23 +1,81 @@
-<div class="footer-container flex align-baseline justify-between flex-wrap">
-  <div class="flex flex-nowrap">
-    <a class="footer-logo cursor-pointer" routerLink="/">OFF.PRODUCTION</a>
-    <div></div>
-    <div class="start-line flex width-min">
-      <div class="sitemap-container flex-center full-width">
-        <a
-          class="cursor-pointer"
-          *ngFor="let content of siteMapContent"
-          [routerLink]="content.path"
-          >{{ content.enTitle }}</a
-        >
+<!-- footer.component.html -->
+<div class="footer-container">
+  <div class="footer-content">
+    
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+      
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <a class="footer-logo" routerLink="/">OFF.PRODUCTION</a>
+        <p class="footer-description">
+          Инновационные решения для ваших проектов
+        </p>
       </div>
-      <socials class="socials-md"></socials>
-      <div class="pt-07rem full-width flex-center">© 2025 OFF.PRODUCTION</div>
+      
+      <!-- Navigation Links -->
+      <div class="footer-nav">
+        <div class="footer-nav-section">
+          <h4>Навигация</h4>
+          <ul>
+            <li
+              *ngFor="let item of siteMapContent"
+            >
+              <a [routerLink]="item.path" [state]="{ ymGoalName: 'footer-NavigationTo-' + item.ruTitle}">
+                {{item.ruTitle}}
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-nav-section">
+          <h4>Контакты</h4>
+          <div class="footer-contact">
+            <p>
+              <strong>Поддержка:</strong><br>
+              <a href="mailto:offprod@yandex.ru">offprod&#64;yandex.ru</a>
+            </p>
+            <p>
+              <strong>Телефон:</strong><br>
+              <a
+                [href]="'tel:' + dataService.phoneNumber"
+              >{{dataService.phoneNumber}}</a>
+            </p>
+        
+          </div>
+        </div>
+        <div class="footer-social">
+          <h4></h4>
+          <socials></socials>
+        </div>
+      </div>
     </div>
+    
+    <!-- Legal Section -->
+    <div class="footer-legal">
+      <div class="footer-legal-links">
+        <a routerLink="/privacy-policy" [state]="{ ymGoalName: 'footer-NavigationTo-Privacy' }">
+          Политика конфиденциальности
+        </a>
+        <a routerLink="/terms-of-service" [state]="{ ymGoalName: 'footer-NavigationTo-Terms' }">
+          Пользовательское соглашение
+        </a>
+        <a routerLink="/cookie-policy" [state]="{ ymGoalName: 'footer-NavigationTo-Cookies' }">
+          Использование cookies
+        </a>
+        <a routerLink="/data-processing" [state]="{ ymGoalName: 'footer-NavigationTo-DataProcessing' }">
+          Обработка персональных данных
+        </a>
+        <a routerLink="/disclaimer" [state]="{ ymGoalName: 'footer-NavigationTo-Disclaimer' }">
+          Отказ от ответственности
+        </a>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2025 OFF.PRODUCTION. Все права защищены.</p>
+
+      </div>
+    </div>
+    
   </div>
-  <div class="mail-container">Support: mail&#64;mail.ru</div>
-  <!-- <div class="socials-container width-min">
-    <socials></socials>
-    <div class="pt-07rem">Support: mail&#64;mail.ru</div>
-  </div> -->
 </div>

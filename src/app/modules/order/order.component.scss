@@ -17,7 +17,7 @@
   max-width: 450px;
   margin: 0 auto;
   padding: 65px 25px;
-  input {
+  > input {
     margin-top: 20px;
     padding: 5px 10px;
     display: block;
@@ -73,5 +73,21 @@
 
   .visible {
     visibility: visible;
+  }
+}
+.checkbox-policy-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 10px;
+  .warning-text {
+    font-size: 0.8rem;
+    color: $base-color-3;
+  
+    a {
+      color: $base-color-1;
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 }

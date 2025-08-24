@@ -20,7 +20,11 @@
   <div class="main-content-container main-content-container-expansion">
     <div class="section">
       <div class="align-end">
-        <a class="cursor-pointer case-header p-20" routerLink="official">
+        <a 
+          class="cursor-pointer case-header p-20" 
+          routerLink="official"
+          [state]="{ymGoalName: 'main-PortfolioLinkClick'}"
+        >
           Смотреть портфолио
         </a>
       </div>
@@ -44,7 +48,13 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-10">
-            <a class="about-button" routerLink="/order">Обсудить проект</a>
+            <a 
+              class="about-button" 
+              routerLink="/order"
+              [state]="{ymGoalName: 'main-OrderLinkClick'}"
+            >
+              Обсудить проект
+            </a>
             <a class="about-button">show real</a>
           </div>
         </div>

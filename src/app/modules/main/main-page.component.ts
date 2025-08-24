@@ -3,6 +3,7 @@ import { PatnersMarqueeComponent } from './components/partners-marquee/patners-m
 import { TilingComponent } from '../tiling/tiling.component';
 import { DataSourceService } from 'src/app/services/datasource.service';
 import { RouterModule } from '@angular/router';
+import { YmNavigationGoalService } from 'src/app/shared/services/yandex-metrica/utils/ym-navigation-goal.service';
 
 
 @Component({
@@ -11,20 +12,12 @@ import { RouterModule } from '@angular/router';
     styleUrls: ['main-page.component.scss'],
     standalone: true,
     imports: [PatnersMarqueeComponent, TilingComponent, RouterModule],
-    providers: [DataSourceService]
+    providers: [DataSourceService, YmNavigationGoalService]
 })
 
-export class MainPageComponent implements OnInit {
+export class MainPageComponent {
     @ViewChild('logo', {read: ElementRef}) logoContainer?:ElementRef<HTMLDivElement>;
 
-    private logoScrollEventListener = ()=> {}
 
-    constructor(private renderer: Renderer2, protected dataService: DataSourceService) { }
-
-    ngOnInit() { 
-        // this.logoScrollEventListener = this.renderer.listen(window, 'scroll', (evt) => {
-        //     this.logoContainer?.nativeElement.classList.add('main-logo-container-scrolled');
-        //     this.logoScrollEventListener();
-        //   });
-    }
+    constructor(protected dataService: DataSourceService) { }
 }

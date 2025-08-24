@@ -35,7 +35,15 @@
   >
     Укажите своё имя
   </div>
-  <button [disabled]="orderForm.invalid" class="cursor-pointer">
+  <div class="checkbox-policy-container">
+    <input type="checkbox" formControlName="checkboxPolicy"/>
+    <div class="warning-text">Я принимаю <a href="./assets/documents/data-processing-policy.pdf">условия передачи информации</a> и согласен на рекламную рассылку</div>
+  </div>
+  <button 
+    [disabled]="orderForm.invalid" 
+    class="cursor-pointer"
+    (click)="submit()"
+  >
     Отправить
   </button>
 </form>

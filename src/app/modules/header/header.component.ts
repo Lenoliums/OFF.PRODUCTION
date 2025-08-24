@@ -11,6 +11,8 @@ import { NavBarComponent } from './components/nav-menu/navBar.component';
 import { BehaviorSubject, filter, first, map } from 'rxjs';
 import { DataSourceService } from 'src/app/services/datasource.service';
 import { SocialsComponent } from 'src/app/shared/components/socials/socials.component';
+import { YmService } from 'src/app/shared/services/yandex-metrica/ym.service';
+import { YmNavigationGoalService } from 'src/app/shared/services/yandex-metrica/utils/ym-navigation-goal.service';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +20,7 @@ import { SocialsComponent } from 'src/app/shared/components/socials/socials.comp
   styleUrls: ['header.component.scss', 'header-media.component.scss'],
   standalone: true,
   imports: [CommonModule, RouterModule, NavBarComponent, SocialsComponent],
-  providers: [DataSourceService],
+  providers: [DataSourceService, YmService, YmNavigationGoalService],
 })
 export class HeaderComponent implements AfterViewInit {
   protected isNavBarOpen$: BehaviorSubject<boolean> = new BehaviorSubject(
@@ -34,11 +36,11 @@ export class HeaderComponent implements AfterViewInit {
     private renderer: Renderer2,
     protected dataService: DataSourceService,
     private location: Location,
-    private router: Router
+    private router: Router,
+    protected ymService: YmService
   ) {}
 
   ngAfterViewInit() {
-    console.log(this.location.path());
     if (this.location.path()) {
       this.bgRect?.nativeElement.classList.add('h-72');
     } else {

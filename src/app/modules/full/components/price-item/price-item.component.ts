@@ -7,6 +7,7 @@ import { fullCart } from 'src/app/types';
 
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
+import { YmNavigationGoalService } from 'src/app/shared/services/yandex-metrica/utils/ym-navigation-goal.service';
 registerLocaleData(localeRu, 'ru');
 @Component({
   selector: 'price-item',
@@ -14,7 +15,7 @@ registerLocaleData(localeRu, 'ru');
   styleUrls: ['price-item.component.scss'],
   standalone: true,
   imports: [CommonModule, RouterModule],
-  providers: [DataSourceService],
+  providers: [DataSourceService, YmNavigationGoalService],
 })
 export class PriceItemComponent implements OnInit, OnDestroy {
   @Input() fullCart?: fullCart;
