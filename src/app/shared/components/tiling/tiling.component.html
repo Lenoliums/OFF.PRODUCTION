@@ -1,0 +1,18 @@
+<div class="tiling-container">
+  <div *ngFor="let case of content; index as i" 
+    class="case-container cursor-pointer"
+    (click)="chooseVideo(i)"
+  >
+    <div class="img-container scale-slide">
+      <div class="description-overlay">
+        <div class="description-content">
+          <h3 class="title-animate">{{ case.title }}</h3>
+          <p class="description-animate">{{ case.description }}</p>
+        </div>
+      </div>
+      <img [src]="case.preview" alt="{{ case.title }}" />
+    </div>
+    <div class="tiling-title">{{ case.title }}</div>
+    <div class="tiling-partner">{{ case.partner }}</div>
+  </div>
+</div>

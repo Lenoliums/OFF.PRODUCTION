@@ -1,0 +1,41 @@
+<ng-container *ngIf="videoService.isOpen$  | async">
+  <div class="video-container" #videoWrapper *ngIf="videoService.currentVideo$ | async as currentVideo">
+    <button
+      *ngIf="((videoService.videos$ | async) || []).length > 1"
+      class="nav-arrow left"
+      aria-label="Previous video"
+      (click)="videoService.prevVideo()"
+    >
+      &#9664;
+    </button>
+  
+    <div class="video-content">
+      <button class="close-btn" aria-label="Close video" (click)="closeVideo()">
+        ✕
+      </button>
+  
+      <h2 class="video-title">{{ currentVideo?.title }}</h2>
+      <h3 class="video-partner" *ngIf="currentVideo?.partner">Партнёр: {{ currentVideo?.partner }}</h3>
+  
+      <video
+        [src]="currentVideo.video"
+        controls
+        autoplay
+        width="640"
+        preload="metadata"
+        (click)="$event.stopPropagation()"
+      >
+        Ваш браузер не поддерживает просмотр видео.
+      </video>
+    </div>
+  
+    <button
+      *ngIf="((videoService.videos$ | async) || []).length > 1"
+      class="nav-arrow right"
+      aria-label="Next video"
+      (click)="videoService.nextVideo()"
+    >
+      &#9654;
+    </button>
+  </div>
+</ng-container>

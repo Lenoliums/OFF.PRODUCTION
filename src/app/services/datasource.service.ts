@@ -8,6 +8,7 @@ import {
   Social,
   TilingContent,
   Partners,
+  VideoItem,
 } from '../types';
 @Injectable()
 export class DataSourceService {
@@ -86,10 +87,16 @@ export class DataSourceService {
 
   public readonly phoneNumber: string = '+7 (953) 326-96-62';
 
+  public readonly showReel: VideoItem = {
+    title: '',
+    partner: '',
+    video: 'https://disk.yandex.ru/d/wBHlFep0cSf2eQ/OFF%20SHOWREEL.mp4'
+  }
+
   public readonly portfolio: Array<TilingContent> = [
     {
       title: 'European weightlifting championship 2020',
-      video: './assets/video/video-3.MOV',
+      video: 'https://disk.yandex.ru/d/wBHlFep0cSf2eQ/portfolio/EUROWC2020.MOV',
       description:
         'мы запечатлели величие континентального чемпионата, где сила встречается с мастерством. Каждая попытка, каждый рекорд и эмоции чемпионов — всё снято с максимальной зрелищностью',
       partner: 'ФТАР',
@@ -97,7 +104,7 @@ export class DataSourceService {
     },
     {
       title: 'Sport',
-      video: './assets/video/video-4.mp4',
+      video: 'https://disk.yandex.ru/d/wBHlFep0cSf2eQ/portfolio/AMBITION%20FITNESS%20PROMO.mp4',
       description:
         'мы сняли место, где рождаются сила и мотивация. Каждый тренажёр, каждая зона и каждое занятие предстают в виде кинематографического опыта для зрителя',
       partner: 'Московский Спорт',
@@ -105,7 +112,7 @@ export class DataSourceService {
     },
     {
       title: 'Auto Tuning Show 2018',
-      video: './assets/video/video-5.mp4',
+      video: 'https://disk.yandex.ru/d/wBHlFep0cSf2eQ/portfolio/Auto%20Tuning%20Show%202018%20%E2%88%92%20%D0%92%D1%8B%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0%20%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D1%82%D1%8E%D0%BD%D0%B8%D0%BD%D0%B3%D0%BE%D0%B2%D1%8B%D1%85%20%D0%BC%D0%B0%D1%88%D0%B8%D0%BD.mp4',
       description:
         'ярчайшее автошоу Европы ожило в наших кадрах! Мы передали мощь, стиль и уникальность каждого автомобиля, превращая событие в настоящее визуальное приключение',
       partner: 'GO2EX',
@@ -113,7 +120,7 @@ export class DataSourceService {
     },
     {
       title: 'ЛисМаркет',
-      video: './assets/video/video-6.mp4',
+      video: 'https://disk.yandex.ru/d/wBHlFep0cSf2eQ/portfolio/LisMarket.mp4',
       description:
         'гастрономический мир, свежесть и уют магазина раскрыты через наши объективы. Мы сделали видео, которое буквально заставляет почувствовать вкус и атмосферу ярмарки',
       partner: 'ЛисМаркет',
@@ -121,7 +128,7 @@ export class DataSourceService {
     },
     {
       title: 'Прорыв 2024',
-      video: './assets/video/video-7.mp4',
+      video: 'https://disk.yandex.ru/d/wBHlFep0cSf2eQ/portfolio/PROryv_review.mp4',
       description:
         'мы показываем событие, где энергия и вдохновение переплетаются с амбициями участников. Каждый момент — настоящий заряд драйва и эмоций',
       partner: 'Московский Спорт',
@@ -129,7 +136,7 @@ export class DataSourceService {
     },
     {
       title: 'XHL 3x3',
-      video: './assets/video/video-8.mp4',
+      video: 'https://disk.yandex.ru/d/wBHlFep0cSf2eQ/portfolio/SPORT%20INTRO_4%D0%BA.mp4',
       description:
         'динамика, скорость и зрелищность хоккея в формате 3 на 3 запечатлены нами максимально эффектно. Энергия игроков и накал борьбы ощущаются в каждом кадре',
       partner: 'XHL',
@@ -137,7 +144,7 @@ export class DataSourceService {
     },
     {
       title: 'Русское Поле',
-      video: './assets/video/video-9.mp4',
+      video: 'https://disk.yandex.ru/d/wBHlFep0cSf2eQ/portfolio/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%BE%D0%B5%20%D0%9F%D0%BE%D0%BB%D0%B5%20%E2%80%93%20%D0%9F%D1%80%D0%BE%D0%BC%D0%BE.mp4',
       description:
         'фестиваль традиций и культуры предстал перед зрителем во всей красе. Мы создали визуальную поэму, где музыка, ремёсла и народные обряды оживают в каждом кадре',
       partner: 'GO2EX',
@@ -145,7 +152,7 @@ export class DataSourceService {
     },
     {
       title: 'Подкаст про аудит серверов',
-      video: './assets/video/video-10.mp4',
+      video: 'https://disk.yandex.ru/i/UERkT9MJLPDnAg',
       description:
         'наш продакшн превратил сложную IT-тему в стильный и понятный контент. Чистый звук, грамотный монтаж и качественная съёмка сделали подкаст не только полезным, но и по-настоящему увлекательным',
       partner: 'Сrabbit',
@@ -153,7 +160,7 @@ export class DataSourceService {
     },
     {
       title: 'Обзор сервера',
-      video: './assets/video/video-11.mp4',
+      video: 'https://disk.yandex.ru/i/fxgv3QXZJ1zRcA',
       description:
         'наша команда показала мощность и функционал современного оборудования в стильной и наглядной подаче. Качественная съёмка, детальные планы и динамичный монтаж подчёркивают каждый аспект сервера — от дизайна до производительности',
       partner: 'Сrabbit',
@@ -161,7 +168,7 @@ export class DataSourceService {
     },
     {
       title: '30-летие МГПУ',
-      video: './assets/video/video-12.mp4',
+      video: 'https://cloud.mail.ru/public/RnHm/2WPSUtXym',
       description:
         'наш продакшн создал юбилейный ролик, в котором соединились история, достижения и атмосфера праздника. Торжественные кадры, яркие эмоции и профессиональный монтаж подчеркнули значимость даты и масштаб события',
       partner: 'Сrabbit',

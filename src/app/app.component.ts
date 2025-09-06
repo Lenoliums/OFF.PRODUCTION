@@ -4,6 +4,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { YmService } from './shared/services/yandex-metrica/ym.service';
 import { SeoService } from './shared/services/seo.service';
+import { VideoService } from './shared/components/video/services/video.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit, OnDestroy{
     private ymGoalNavigation: YmNavigationGoalService,
     private ymService: YmService,
     private router: Router,
-    private seoService: SeoService
+    private seoService: SeoService,
+    protected videoService: VideoService
   ){}
   
   ngOnInit(): void {

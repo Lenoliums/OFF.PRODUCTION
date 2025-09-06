@@ -10,6 +10,7 @@ import { FooterComponent } from './modules/footer/footer.component';
 import { ContactButtonComponent } from './modules/contact-button/contact-button.component';
 import { YmNavigationGoalService } from './shared/services/yandex-metrica/utils/ym-navigation-goal.service';
 import { YmService } from './shared/services/yandex-metrica/ym.service';
+import { VideoComponent } from './shared/components/video/video.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { YmService } from './shared/services/yandex-metrica/ym.service';
     ContactButtonComponent,
     NgxMaskModule.forRoot(),
     BrowserAnimationsModule,
+    VideoComponent
   ],
   providers: [
     YmNavigationGoalService,

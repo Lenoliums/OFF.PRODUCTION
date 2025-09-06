@@ -23,6 +23,13 @@ type Partners = {
   marqueeImg: string;
 };
 
+
+type VideoItem = {
+  title: string;
+  video: string;
+  partner: string;
+}
+
 type OptionsNames = 'Предпродакшн' | 'Продакшн' | 'Постпродакшн';
 type PreProductionItems =
   | 'Сценарий'
@@ -82,4 +89,5 @@ export {
   ProductionItem,
   PostProductionItem,
   Partners,
+  VideoItem
 };
