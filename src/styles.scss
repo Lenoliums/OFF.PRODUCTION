@@ -213,6 +213,7 @@ html {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 $base-color-1: #ffffff;
@@ -231,6 +232,9 @@ $error-color: #ff0000;
 }
 
 .cursor-pointer {
+  * {
+    cursor: pointer;
+  }
   cursor: pointer;
 }
 input {

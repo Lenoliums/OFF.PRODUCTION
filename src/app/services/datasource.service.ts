@@ -27,11 +27,11 @@ export class DataSourceService {
       ruTitle: 'ПРАЙСЫ',
       path: 'full',
     },
-    {
-      enTitle: 'FRAME',
-      ruTitle: 'КЛИЕНТЫ',
-      path: 'frame',
-    },
+    // {
+    //   enTitle: 'FRAME',
+    //   ruTitle: 'КЛИЕНТЫ',
+    //   path: 'frame',
+    // },
     {
       enTitle: 'PRODUCTION',
       ruTitle: 'КОМАНДА',
@@ -91,7 +91,7 @@ export class DataSourceService {
       title: 'European weightlifting championship 2020',
       video: './assets/video/video-3.MOV',
       description:
-        'text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text',
+        'мы запечатлели величие континентального чемпионата, где сила встречается с мастерством. Каждая попытка, каждый рекорд и эмоции чемпионов — всё снято с максимальной зрелищностью',
       partner: 'ФТАР',
       preview: './assets/preview/video-3.png',
     },
@@ -99,7 +99,7 @@ export class DataSourceService {
       title: 'Sport',
       video: './assets/video/video-4.mp4',
       description:
-        'text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text',
+        'мы сняли место, где рождаются сила и мотивация. Каждый тренажёр, каждая зона и каждое занятие предстают в виде кинематографического опыта для зрителя',
       partner: 'Московский Спорт',
       preview: './assets/preview/video-4.png',
     },
@@ -107,7 +107,7 @@ export class DataSourceService {
       title: 'Auto Tuning Show 2018',
       video: './assets/video/video-5.mp4',
       description:
-        'text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text',
+        'ярчайшее автошоу Европы ожило в наших кадрах! Мы передали мощь, стиль и уникальность каждого автомобиля, превращая событие в настоящее визуальное приключение',
       partner: 'GO2EX',
       preview: './assets/preview/video-5.png',
     },
@@ -115,7 +115,7 @@ export class DataSourceService {
       title: 'ЛисМаркет',
       video: './assets/video/video-6.mp4',
       description:
-        'text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text',
+        'гастрономический мир, свежесть и уют магазина раскрыты через наши объективы. Мы сделали видео, которое буквально заставляет почувствовать вкус и атмосферу ярмарки',
       partner: 'ЛисМаркет',
       preview: './assets/preview/video-6.png',
     },
@@ -123,7 +123,7 @@ export class DataSourceService {
       title: 'Прорыв 2024',
       video: './assets/video/video-7.mp4',
       description:
-        'text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text',
+        'мы показываем событие, где энергия и вдохновение переплетаются с амбициями участников. Каждый момент — настоящий заряд драйва и эмоций',
       partner: 'Московский Спорт',
       preview: './assets/preview/video-7.png',
     },
@@ -131,7 +131,7 @@ export class DataSourceService {
       title: 'XHL 3x3',
       video: './assets/video/video-8.mp4',
       description:
-        'text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text',
+        'динамика, скорость и зрелищность хоккея в формате 3 на 3 запечатлены нами максимально эффектно. Энергия игроков и накал борьбы ощущаются в каждом кадре',
       partner: 'XHL',
       preview: './assets/preview/video-8.png',
     },
@@ -139,9 +139,33 @@ export class DataSourceService {
       title: 'Русское Поле',
       video: './assets/video/video-9.mp4',
       description:
-        'text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text',
+        'фестиваль традиций и культуры предстал перед зрителем во всей красе. Мы создали визуальную поэму, где музыка, ремёсла и народные обряды оживают в каждом кадре',
       partner: 'GO2EX',
       preview: './assets/preview/video-9.png',
+    },
+    {
+      title: 'Подкаст про аудит серверов',
+      video: './assets/video/video-10.mp4',
+      description:
+        'наш продакшн превратил сложную IT-тему в стильный и понятный контент. Чистый звук, грамотный монтаж и качественная съёмка сделали подкаст не только полезным, но и по-настоящему увлекательным',
+      partner: 'Сrabbit',
+      preview: './assets/preview/video-10.png',
+    },
+    {
+      title: 'Обзор сервера',
+      video: './assets/video/video-11.mp4',
+      description:
+        'наша команда показала мощность и функционал современного оборудования в стильной и наглядной подаче. Качественная съёмка, детальные планы и динамичный монтаж подчёркивают каждый аспект сервера — от дизайна до производительности',
+      partner: 'Сrabbit',
+      preview: './assets/preview/video-11.png',
+    },
+    {
+      title: '30-летие МГПУ',
+      video: './assets/video/video-12.mp4',
+      description:
+        'наш продакшн создал юбилейный ролик, в котором соединились история, достижения и атмосфера праздника. Торжественные кадры, яркие эмоции и профессиональный монтаж подчеркнули значимость даты и масштаб события',
+      partner: 'Сrabbit',
+      preview: './assets/preview/video-12.png',
     },
   ];
 
