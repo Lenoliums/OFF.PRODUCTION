@@ -19,6 +19,18 @@ export class FullPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  protected delay(i: number): number {
+    const width = window.innerWidth;
+
+    if (width <= 667) {
+      return 0;
+    } else if (width <= 1153) {
+      return (i % 2) * 200;
+    } else {
+      return (i % 3) * 200;
+    }
+  }
+
   protected trackByCard: TrackByFunction<fullCart> = (
     index: number,
     card: fullCart

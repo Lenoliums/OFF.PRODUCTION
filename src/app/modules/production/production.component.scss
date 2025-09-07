@@ -1,6 +1,7 @@
 @import "../../../styles.scss";
 :host {
   display: block;
+  overflow-x: hidden;
   min-height: calc(100vh - 72px);
   background-color: $base-color-2;
   * {
@@ -14,10 +15,7 @@
 .arrow-left {
   width: 30px;
   height: 30px;
-  -moz-transform: scale(-1, -1);
-  -o-transform: scale(-1, -1);
-  -webkit-transform: scale(-1, -1);
-  transform: scale(-1, -1);
+  rotate: 180deg;
 }
 .gap-10 {
   gap: 10px;
@@ -30,10 +28,12 @@
   object-fit: cover;
   min-height: calc(100vh - 72px);
   object-position: 40% 0%;
+  display: block;
 }
 .flex-50 {
   flex: 1 0 50%;
 }
+
 .p-1r {
   padding: 1rem;
 }

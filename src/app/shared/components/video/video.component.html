@@ -15,7 +15,7 @@
       </button>
   
       <h2 class="video-title">{{ currentVideo?.title }}</h2>
-      <h3 class="video-partner" *ngIf="currentVideo?.partner">Партнёр: {{ currentVideo?.partner }}</h3>
+      <h3 class="video-partner">{{ currentVideo?.partner ? 'Партнёр: ' + currentVideo?.partner : currentVideo?.partner }}</h3>
   
       <video
         [src]="currentVideo.video"

@@ -27,6 +27,8 @@
   background: #111;
   padding: 1rem;
   width: var(--video-container-width);
+  overflow-y: auto;
+  max-height: 100vh;
   @media (max-width: 660px) {
     padding: 2rem 1rem 1rem;
   }

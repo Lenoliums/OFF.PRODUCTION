@@ -23,19 +23,5 @@ import { NgxMaskModule } from 'ngx-mask';
   imports: [ReactiveFormsModule, CommonModule, NgxMaskModule],
   providers: [],
 })
-export class ProductionPageComponent implements OnInit {
-  public productionForm = new FormGroup({
-    phone: new FormControl('', [
-      Validators.required,
-      Validators.pattern('[0-9]{10}'),
-    ]),
-    name: new FormControl('', Validators.required),
-  });
-  public console(t: any) {
-    console.log(t);
-  }
-
-  constructor() {}
-
-  ngOnInit() {}
+export class ProductionPageComponent {
 }

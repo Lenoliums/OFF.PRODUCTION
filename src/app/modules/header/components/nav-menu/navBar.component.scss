@@ -23,7 +23,8 @@
 }
 
 .header-nav-bar {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding-top: 72px;
   -webkit-animation: animateWidth 1s ease-out;
   @media (max-width: 950px) {

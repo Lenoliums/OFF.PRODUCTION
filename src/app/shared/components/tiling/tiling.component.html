@@ -1,5 +1,7 @@
 <div class="tiling-container">
   <div *ngFor="let case of content; index as i" 
+    data-aos="fade-up"
+    [attr.data-aos-delay]="delay(i)"
     class="case-container cursor-pointer"
     (click)="chooseVideo(i)"
   >

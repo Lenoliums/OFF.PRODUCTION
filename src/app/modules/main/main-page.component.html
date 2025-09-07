@@ -1,70 +1,79 @@
-<video
-  id="video"
-  #video
-  [autoplay]="true"
-  [muted]="true"
-  [loop]="true"
-  src="https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/d/wBHlFep0cSf2eQ/video_fon/back%20-%201.mov"
-></video>
-<div class="main-container">
-  <div #logo class="main-logo-container">
-    <div class="main-logo">
-      OFF.PRODUCTION
 
-      <div class="main-logo-text">
-        От идеи до реализации — мы делаем контент, который выделяет вас среди
-        конкурентов
-      </div>
-    </div>
-  </div>
-  <div class="main-content-container main-content-container-expansion">
-    <div class="section">
-      <div class="align-end">
-        <a 
-          class="cursor-pointer case-header p-20" 
-          routerLink="official"
-          [state]="{ymGoalName: 'main-PortfolioLinkClick'}"
-        >
-          Смотреть портфолио
-        </a>
-      </div>
-
-      <tiling [content]="dataService.portfolio.slice(0, 4)"></tiling>
-    </div>
-    <div class="about-container section">
-      <div class="about-header">О нас:</div>
-      <div class="flex gap-10">
-        <div class="flex flex-50 flex-column gap-20">
-          <div class="about-bullets-list">
-            <div class="about-bullet">
-              Более 10 лет опыта&nbsp;в видеопродакшене
-            </div>
-            <div class="about-bullet">Оперативная связь и быстрый старт</div>
-            <div class="about-bullet">
-              Индивидуальный подход к каждому клиенту
-            </div>
-            <div class="about-bullet">
-              Работа с любыми форматами и уровнями сложности проектов
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-10">
-            <a 
-              class="about-button" 
-              routerLink="/order"
-              [state]="{ymGoalName: 'main-OrderLinkClick'}"
-            >
-              Обсудить проект
-            </a>
-            <a class="about-button" (click)="openVideo()">show real</a>
-          </div>
+<div [ngClass]="{'hidden': !(isLoaded$ | async)}">
+  <video
+    id="video"
+    #video
+    [autoplay]="true"
+    [muted]="true"
+    [loop]="true"
+    (canplaythrough)="finishLoading()"
+    src="https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/d/wBHlFep0cSf2eQ/video_fon/back%20-%201.mov"
+  ></video>
+  <div class="main-container">
+    <div #logo class="main-logo-container">
+      <div class="main-logo" data-aos="fade-right">
+        OFF.PRODUCTION
+  
+        <div class="main-logo-text">
+          От идеи до реализации — мы делаем контент, который выделяет вас среди
+          конкурентов
         </div>
-
-        <img
-          class="about-img"
-          src="./assets/celovek-snimausii-na-professional-nuu-kameru.jpg"
-        />
       </div>
     </div>
-    <patners-marquee></patners-marquee>
+    <div class="main-content-container main-content-container-expansion"
+      data-aos="fade-up"
+    >
+      <div class="section">
+        <div class="align-end">
+          <a 
+            data-aos="fade-right"
+            class="cursor-pointer case-header p-20" 
+            routerLink="official"
+            [state]="{ymGoalName: 'main-PortfolioLinkClick'}"
+          >
+            Смотреть портфолио
+          </a>
+        </div>
+  
+        <tiling [content]="dataService.portfolio.slice(0, 4)"></tiling>
+      </div>
+      <div class="about-container section">
+        <div class="about-header" data-aos="fade-right">О нас:</div>
+        <div class="flex gap-10">
+          <div class="flex flex-50 flex-column gap-20">
+            <div class="about-bullets-list">
+              <div class="about-bullet">
+                Более 10 лет опыта&nbsp;в видеопродакшене
+              </div>
+              <div class="about-bullet">Оперативная связь и быстрый старт</div>
+              <div class="about-bullet">
+                Индивидуальный подход к каждому клиенту
+              </div>
+              <div class="about-bullet">
+                Работа с любыми форматами и уровнями сложности проектов
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-10">
+              <a 
+                class="about-button" 
+                routerLink="/order"
+                [state]="{ymGoalName: 'main-OrderLinkClick'}"
+                data-aos="fade-right" data-aos-delay="100"
+              >
+                Обсудить проект
+              </a>
+              <a class="about-button" data-aos="fade-right" (click)="openVideo()">show real</a>
+            </div>
+          </div>
+  
+          <img
+            data-aos="fade-left"
+            class="about-img"
+            src="./assets/celovek-snimausii-na-professional-nuu-kameru.jpg"
+          />
+        </div>
+      </div>
+      <patners-marquee></patners-marquee>
+    </div>
   </div>
 </div>

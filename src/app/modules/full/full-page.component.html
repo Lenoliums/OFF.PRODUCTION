@@ -1,7 +1,9 @@
-<div class="header">Прайс-листы</div>
+<div class="header" data-aos="fade-right">Прайс-листы</div>
 <div class="price-container">
   <price-item
-    *ngFor="let card of fullCards; trackBy: trackByCard"
+    data-aos="fade-up"
+    *ngFor="let card of fullCards;index as i; trackBy: trackByCard"
+    [attr.data-aos-delay]="delay(i)"
     [fullCart]="card"
   ></price-item>
 </div>

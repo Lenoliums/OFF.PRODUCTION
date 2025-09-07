@@ -23,5 +23,13 @@ export class TilingComponent implements OnInit {
         partner: el.partner})), i)
     }
 
+  protected delay(i: number): number {
+    const width = window.innerWidth;
+
+    if (width <= 650) {
+      return 0;
+    } else return (i % 2) * 200;
+  }
+
     ngOnInit() { }
 }

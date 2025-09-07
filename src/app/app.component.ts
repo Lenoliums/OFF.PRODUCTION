@@ -5,6 +5,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { YmService } from './shared/services/yandex-metrica/ym.service';
 import { SeoService } from './shared/services/seo.service';
 import { VideoService } from './shared/components/video/services/video.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,11 @@ export class AppComponent implements OnInit, OnDestroy{
       if (event instanceof NavigationEnd) {
         this.ymService.hit();
       }
+    });
+
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
     });
   }
   
