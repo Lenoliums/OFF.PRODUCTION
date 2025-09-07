@@ -23,7 +23,8 @@ export class OrderPageComponent {
     public orderForm = new FormGroup({
         phone: new FormControl("", [Validators.required, Validators.pattern("[0-9]{10}")]),
         name: new FormControl("", Validators.required),
-        checkboxPolicy: new FormControl(false, Validators.requiredTrue)
+        checkboxPolicy: new FormControl(false, Validators.requiredTrue),
+        checkboxAds: new FormControl(false),
     });
 
     protected async submit() {
@@ -33,7 +34,8 @@ export class OrderPageComponent {
                 const formData = {
                     phone: this.orderForm.get('phone')?.value,
                     name: this.orderForm.get('name')?.value,
-                    url: window.location.href 
+                    url: window.location.href,
+                    adsArgeement: this.orderForm.get('checkboxAds')?.value
                 };
 
                 const response = await this.http.post('/.netlify/functions/telegram-form', formData).toPromise();

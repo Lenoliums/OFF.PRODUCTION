@@ -35,10 +35,15 @@
   >
     Укажите своё имя
   </div>
-  <div class="checkbox-policy-container">
+  <div class="checkbox-container">
     <input type="checkbox" formControlName="checkboxPolicy"/>
-    <div class="warning-text">Я принимаю <a target="_blank" href="./assets/documents/Off_Prod_Policy_Agreement.pdf">условия передачи информации</a> и согласен на рекламную рассылку</div>
+    <div class="warning-text">Я ознакомлен с <a target="_blank" href="./assets/documents/Off_Prod_Policy_Agreement.pdf">пользовательским соглашением </a> </div>
   </div>
+  <div class="checkbox-container">
+    <input type="checkbox" formControlName="checkboxAds"/>
+    <div class="warning-text">Я даю согласие на получение рекламных и информационных материалов </div>
+  </div>
+    
   <button 
     [disabled]="orderForm.invalid" 
     class="cursor-pointer"

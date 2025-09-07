@@ -1,10 +1,10 @@
 <ng-container *ngIf="videoService.isOpen$  | async">
-  <div class="video-container" #videoWrapper *ngIf="videoService.currentVideo$ | async as currentVideo">
+  <div class="video-container" #videoWrapper *ngIf="videoService.currentVideo$ | async as currentVideo" (click)="closeVideo()">
     <button
       *ngIf="((videoService.videos$ | async) || []).length > 1"
       class="nav-arrow left"
       aria-label="Previous video"
-      (click)="videoService.prevVideo()"
+       (click)="$event.stopPropagation(); videoService.prevVideo()"
     >
       &#9664;
     </button>
@@ -21,7 +21,6 @@
         [src]="currentVideo.video"
         controls
         autoplay
-        width="640"
         preload="metadata"
         (click)="$event.stopPropagation()"
       >
@@ -33,7 +32,7 @@
       *ngIf="((videoService.videos$ | async) || []).length > 1"
       class="nav-arrow right"
       aria-label="Next video"
-      (click)="videoService.nextVideo()"
+      (click)="$event.stopPropagation(); videoService.nextVideo()"
     >
       &#9654;
     </button>

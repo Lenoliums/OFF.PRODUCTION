@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
     }
 
     try {
-        const { phone, name, url } = JSON.parse(event.body);
+        const { phone, name, url, adsArgeement } = JSON.parse(event.body);
         
         // Получаем переменные окружения
         const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -29,6 +29,7 @@ exports.handler = async (event, context) => {
 📱 Телефон: ${phone}
 👤 Имя: ${name}
 🌐 Страница: ${url}
+${adsArgeement ? '🎉 Получено согласие на рекламные рассылки!' : '😔 не получено согласие на рекламу(('}
 
 #новая_заявка`;
 
