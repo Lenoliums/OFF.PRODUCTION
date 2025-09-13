@@ -6,7 +6,7 @@ import { VideoItem } from 'src/app/types';
   providedIn: 'root',
 })
 export class VideoService {
-  public readonly BASE_URL = 'https://getfile.dokpub.com/yandex/get/';
+  // public readonly BASE_URL = 'https://getfile.dokpub.com/yandex/get/';
   videos$ = new BehaviorSubject<VideoItem[]>([]);
 
   private currentIndexSubject = new BehaviorSubject<number>(0);
@@ -24,8 +24,7 @@ export class VideoService {
       return null;
     }
     return {
-      ...videos[ind],
-      video: this.BASE_URL + videos[ind].video,
+      ...videos[ind]
     };
   })
 );
